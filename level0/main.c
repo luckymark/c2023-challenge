@@ -9,26 +9,45 @@
 int main(){
     setbuf(stdout,NULL);
     printf("Hello world！I'm 陈筑江！");
+
     extern int MaxNum_v3(int,...);
     printf("Max = %d",MaxNum_v3(5,2,1,9,8,88));
+    printf("\r\n");
+
     extern void Print99Chart();
     printf("\r\n");
     Print99Chart();
+
     extern void PrintReverse();
     PrintReverse();
+
     extern void PopOutExistence();
     PopOutExistence();
+
     extern void Sort();
     Sort();
+
     extern int Plus(int data[],int length);
     int data[]={1,2,4,7,3,4,1};
     printf("%d",Plus(data,7));
     printf("\r\n");
+
     extern int Factorial(int n);
     printf("%d", Factorial(5));
     printf("\r\n");
+
     extern void Fibonacci(int a1,int a2,int length);
     Fibonacci(1,1,20);
+    printf("\r\n");
+
+    extern int IsRT(int a,int b,int c);
+    printf("%s",IsRT(3,4,5)?"RT!":"No RT..");
+
+    extern float USDToRMB(float USD);
+    float usd;
+    printf("\r\nusd=");
+    scanf("%f",&usd);
+    printf("%f USD = %f",usd, USDToRMB(usd));
     return 0;
 }
 
@@ -106,7 +125,7 @@ void Print99Chart(){
 ///输入n个数(?可以不是)然后倒着输出
 void PrintReverse(){
     int n;
-    printf("输入n个数(or any)，并将它们逆序输出");
+    printf("输入n个数(or any)，并将它们逆序输出 n=");
     scanf("%d",&n);
     printf("Enter nums split by ','\r\n");
     char str[100];
@@ -153,7 +172,7 @@ void Sort(){
         }
     }
     for(int i=0;i<5;i++)
-        printf("%d",n[i]);
+        printf("%d ",n[i]);
 }
 /*     C3     */
 int Plus(int data[],int length){
@@ -162,12 +181,14 @@ int Plus(int data[],int length){
         value+=data[i];
     return value;
 }
+//阶乘!
 int Factorial(int n){
     int value=1;
     for(int i=1;i<n+1;i++)
         value*=i;
     return value;
 }
+//斐波那契数列
 void Fibonacci(int a1,int a2,int length){
     int a=a1,b=a2,c;
     for(int i=0;i<length-1;i++){
@@ -182,4 +203,8 @@ int IsRT(int a,int b,int c){
     return pow(a,2)+pow(b,2)==pow(c,2)||
             pow(a,2)+pow(c,2)==pow(b,2)||
             pow(c,2)+pow(b,2)==pow(a,2);
+}
+
+float USDToRMB(float USD){
+    return USD*7.34;//9月8日 UTC 21:00
 }
