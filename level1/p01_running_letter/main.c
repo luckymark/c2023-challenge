@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-#define RIGHT 0
+#define RIGHT 00
 #define LEFT  1
 
 HANDLE hd;
