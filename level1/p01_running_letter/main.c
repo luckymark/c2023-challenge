@@ -42,7 +42,7 @@ int ne(int now)
 }
 
 int main() {
-    int now;
+    int now=0;
     hd= GetStdHandle(STD_OUTPUT_HANDLE);
     GetSize();
     printf("a");
