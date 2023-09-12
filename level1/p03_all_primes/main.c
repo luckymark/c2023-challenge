@@ -4,6 +4,7 @@ const int N=1000;
 int NotPrime[N+1]={},primes[N+1],num=0;
 int main()
 {
+
     WORD timer=0;
     SYSTEMTIME tm0,tm1;
     GetSystemTime(&tm0);

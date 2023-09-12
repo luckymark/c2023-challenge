@@ -2,6 +2,7 @@
 #include <math.h>
 int main()
 {
+
     int n,end;
     scanf("%d",&n);
     end=sqrt(n)+1;

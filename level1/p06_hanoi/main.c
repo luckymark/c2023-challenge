@@ -13,6 +13,7 @@ void move(int cap,int tar,int buffer,int num)
 }
 int main()
 {
+
     move(1,2,3,64);
     return 0;
 }

@@ -4,6 +4,7 @@
 #define RIGHT 00
 #define LEFT  1
 
+
 HANDLE hd;
 int width,dir=RIGHT;
 void move(int x,int y)

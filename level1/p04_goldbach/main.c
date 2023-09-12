@@ -3,6 +3,7 @@ const int N=100;
 int NotPrime[N+2],primes[N+2],pNum;
 void init_prime()
 {
+
     for(int i=2;i<=N;++i)
     {
         if(!NotPrime[i]) primes[pNum++]=i;
@@ -17,6 +18,7 @@ void init_prime()
 }
 int main()
 {
+
     int flag;
     init_prime();
     for(int i=8;i<=N;i+=2)
