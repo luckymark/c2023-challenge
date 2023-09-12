@@ -17,6 +17,7 @@ void init_prime()
 }
 int main()
 {
+
     int flag;
     init_prime();
     for(int i=8;i<=N;i+=2)
