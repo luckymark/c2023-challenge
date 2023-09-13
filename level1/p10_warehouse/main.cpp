@@ -29,7 +29,7 @@ bool isIDExist(string id){
 }
 
 string path="data.tw";
-vector<string> stringSplit(const std::string& strIn, char delim) {
+vector<string> stringSplit(const string& strIn, char delim) {
     char* str = const_cast<char*>(strIn.c_str());
     string s;
     s.append(1, delim);
