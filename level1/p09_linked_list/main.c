@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
+
 const int N=100;
 
 int ne[N+5]={},val[N+5]={},head=1,tail=N;
