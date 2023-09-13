@@ -12,6 +12,22 @@ using namespace std;
  * 于是直接粗暴地读写文件 能创一个是一个..
  *
  * */
+vector<string> IdList;//index
+vector<string> DataList;//data
+const char spilt='|';
+string DataBuilder(string id,string name,string count) {
+    return id+spilt+name+spilt+count;
+}
+string ItemString(vector<string> result){
+    return "货号:"+result[0]+" 名称:"+result[1]+" 数量:"+result[2]+"\r\n";
+}
+bool isIDExist(string id){
+    for(int i=0;i<IdList.size();i++){
+        if(IdList[i]==id)return true;
+    }
+    return false;
+}
+
 string path="data.tw";
 vector<string> stringSplit(const std::string& strIn, char delim) {
     char* str = const_cast<char*>(strIn.c_str());
@@ -25,22 +41,35 @@ vector<string> stringSplit(const std::string& strIn, char delim) {
     }
     return elems;
 }
-void ShowList(){
+
+void IndexList(){
+    DataList.clear();
+    IdList.clear();
     fstream fs;
     fs.open(path,ios::in);
     if(fs.is_open()){
         string str;
         while(getline(fs,str)){
-            vector data=stringSplit(str,'|');
-            cout<<"货号:"+data[0]+" 名称:"+data[1]+" 数量:"+data[2]+"\r\n"<<endl;
+            //执行strtok会将spilt->\0..
+            DataList.push_back(str);
+            vector data=stringSplit(str,spilt);
+            IdList.push_back(data[0]);
         }
         fs.close();
     }
+}
+void ShowList(){
+    for(int i=0;i<DataList.size();i++)
+        cout<<ItemString(stringSplit(DataList[i],spilt))<<endl;
 }
 void WriteLine(){
     cout<<"输入货号:"<<endl;
     string id;
     cin>>id;
+    if(isIDExist(id)){
+        cout<<"This id has existed!"<<endl;
+        return;
+    }
     cout<<"输入名称:"<<endl;
     string name;
     cin>>name;
@@ -51,10 +80,11 @@ void WriteLine(){
     fstream fs;
     fs.open(path,ios::app);
     if(fs.is_open()){
-        fs<<id+"|"+name+"|"+count<<"\r\n";
+        fs<<DataBuilder(id,name,count)<<"\r\n";
         fs.close();
     }
 }
+//使用复写的垃圾方法emmm..
 void PopOut(){
     cout<<"输入货号:"<<endl;
     string id;
@@ -70,7 +100,7 @@ void PopOut(){
         while(getline(fs,str)){
             vector data=stringSplit(str,'|');
             if(data[0]!=id)
-                filedata+=data[0]+"|"+data[1]+"|"+data[2]+"\r\n";
+                filedata+= DataBuilder(data[0],data[1],data[2])+"\r\n";
             else {
                 found=true;
                 result=data;
@@ -85,18 +115,19 @@ void PopOut(){
             writer << filedata;
             writer.close();
         }
-        cout<<"已出库： 货号:"+result[0]+" 名称:"+result[1]+" 数量:"+result[2]+"\r\n"<<endl;
+        cout<<"已出库： "<<ItemString(result)<<endl;
     }else cout<<"??找不到此货号..\r\n"<<endl;
 }
 
 int main() {
-    //先创建库存文件 如果不存在
+    //create data file..
     ofstream fs;
-    fs.open(path, ios::app);
-    if (!fs)  //true则说明文件打开出错
-    cout << "failed to create file.." << endl;
-    else fs.close();
-for(;;) {
+    fs.open(path,ios::app);
+    if(fs.is_open())fs.close();
+    else cout<<"failed to access file."<<endl;
+
+    for(;;) {
+    IndexList();
     string text = "1.显示存货列表\r\n"
                   "2.入库\r\n"
                   "3.出库\r\n"
