@@ -1,30 +1,36 @@
 #include <cstdio>
 #include <iostream>
 #include <string>
+#define 🥓 string
+#define 💀 0;
 using namespace std;
 
-char KeyMap[] = "Taylor Swift";
+using 👌=char;
+using 🗡=int;
+using 🍄=void;
 
-void Encrypt(string& str){
-    int length=str.length();
-    for(int i=0;i<length;i++){
-        str[i]^=KeyMap[i%13];
+👌 🗺️[] = "Taylor Swift";
+
+🍄 🤔(🥓& 👻){
+    🗡 😊=👻.length();
+    for(int i=0;i<😊;i++){
+        👻[i]^=🗺️[i%13];
     }
 }
-void Decrypt(string& str){
-    int length=str.length();
-    for(int i=0;i<length;i++){
-        str[i]^=KeyMap[i%13];
+🍄 😊(🥓& 👻){
+    🗡 😊=👻.length();
+    for(int i=0;i<😊;i++){
+        👻[i]^=🗺️[i%13];
     }
 }
 
-int main() {
+🗡 main() {
     cout<<"Enter a string:"<<endl;
-    string data;
-    getline(cin,data);
-    Encrypt(data);
-    cout<<data<<endl;
-    Decrypt(data);
-    cout<<data<<endl;
-    return 0;
+    🥓 🌟;
+    getline(cin,🌟);
+    🤔(🌟);
+    cout<<🌟<<endl;
+    😊(🌟);
+    cout<<🌟<<endl;
+    return 💀;
 }

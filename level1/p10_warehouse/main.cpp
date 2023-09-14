@@ -36,7 +36,7 @@ vector<string> stringSplit(const string& strIn, char delim) {
     vector<string> elems;
     char* splitted = strtok(str, s.c_str());
     while (splitted != NULL) {
-        elems.push_back(std::string(splitted));
+        elems.push_back(string(splitted));
         splitted = strtok(NULL, s.c_str());
     }
     return elems;
