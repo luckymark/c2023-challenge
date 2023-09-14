@@ -1,6 +1,12 @@
 ### C0
 
 1. 打印 “Hello world！I'm 某某某！”
+#include <stdio.h>
+int main()
+{
+    printf("Hello World!I'm WenXin! \n");
+    return 0;
+}
 
 ### C1
 
