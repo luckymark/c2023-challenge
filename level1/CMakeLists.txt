@@ -1,6 +1,10 @@
 project(level1)
 
+find_package(Curses REQUIRED)
+
 add_executable(p01_running_letter p01_running_letter/main.cpp)
+target_include_directories(p01_running_letter PRIVATE ${CURSES_INCLUDE_DIR})
+target_link_libraries(p01_running_letter PRIVATE ${CURSES_LIBRARIES})
 
 add_executable(p02_is_prime p02_is_prime/main.cpp)
 
