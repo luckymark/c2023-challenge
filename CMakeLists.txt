@@ -7,3 +7,4 @@ set(CMAKE_CXX_STANDARD 23)
 add_subdirectory(level1)
 
 add_subdirectory(level2/PI)
+add_subdirectory(level2/SkipList)
