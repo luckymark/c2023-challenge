@@ -36,7 +36,7 @@ void find_max(){
     int max_num;
     p = &max_num;
     max_num = num_list[0];
-    for (i = 1;i == (sizeof(num_list)/sizeof(num_list[0])); i++){
+    for (i = 1;i <= (sizeof(num_list)/sizeof(num_list[0])); i++){
         if (num_list[i] <= max_num)
             continue;
         else
