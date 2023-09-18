@@ -36,7 +36,8 @@ void func(){
 }
 
 int main() {
-    // func();
+    func();
+    /*
     for(int i = 1; i <= 100; i ++){
         if(isPrimeNumber(i)){
 
@@ -47,6 +48,7 @@ int main() {
             printf("%d, ", i);
         }
     }
+    */
     // printf("\b\b  ");
 
     return 0;
