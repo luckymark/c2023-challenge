@@ -12,7 +12,7 @@ add_executable(p05_encrypt_decrypt p05_encrypt_decrypt/main.c)
 
 add_executable(p06_hanoi p06_hanoi/main.c)
 
-add_executable(p07_maze p07_maze/main.c)
+add_executable(p07_maze p07_maze/main_bak.c)
 
 add_executable(p08_push_boxes p08_push_boxes/main.c)
 
