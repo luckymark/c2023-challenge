@@ -5,6 +5,7 @@
 
 const int N=100;
 
+
 int ne[N+5]={},val[N+5]={},head=1,tail=N;
 
 int random(int Min,int Max)
