@@ -1,0 +1,137 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "level1",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "p01_running_letter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p01_running_letter-Debug-4bdb8629356112ac3c85.json",
+					"name" : "p01_running_letter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p02_is_prime::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p02_is_prime-Debug-31e4de78237b27b486dc.json",
+					"name" : "p02_is_prime",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p03_all_primes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p03_all_primes-Debug-457dd5fcc9929087659b.json",
+					"name" : "p03_all_primes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p04_goldbach::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p04_goldbach-Debug-f34835a45da94e8ff5bf.json",
+					"name" : "p04_goldbach",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p05_encrypt_decrypt::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p05_encrypt_decrypt-Debug-3c5800181082445dbc3d.json",
+					"name" : "p05_encrypt_decrypt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p06_hanoi::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p06_hanoi-Debug-1b8a0a2f3e11520e20e7.json",
+					"name" : "p06_hanoi",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p07_maze::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p07_maze-Debug-ae2545c4596a30a25f51.json",
+					"name" : "p07_maze",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p08_push_boxes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p08_push_boxes-Debug-d1fe5e1440e8e5412499.json",
+					"name" : "p08_push_boxes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p09_linked_list::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p09_linked_list-Debug-c0c3647ae3f036880b35.json",
+					"name" : "p09_linked_list",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p10_warehouse::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p10_warehouse-Debug-6e70afd712a0167192b4.json",
+					"name" : "p10_warehouse",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/class/d/level1/cmake-build-debug",
+		"source" : "D:/class/d/level1"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
