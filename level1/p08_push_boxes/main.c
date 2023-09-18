@@ -40,27 +40,28 @@ int player[2];
 int boxes[BOX_COUNT][2];
 int goal[GOAL_COUNT][2];
 int level = 1;
-int score[5] = {100, 100, 100, 100, 100};
+int score[5] = {0, 0, 0, 0, 0};
 int count = 0;
 int n_score = 100;
 
 int getScore(){
-    char src[] = "D:\\class\\c2023-challenge\\level1\\p08_push_boxes\\score.txt";
+    char src[] = "D:\\class\\r\\c2023-challenge\\level1\\p08_push_boxes\\score.txt";
     char s[5] = "";
     FILE *fp = fopen(src, "r");
     for(int i = 0; i < ALL_LEVEL; i ++){
         score[i] = atoi(fgets(s, 10, fp));
     }
     fclose(fp);
-    for(int i = 0; i < 5; i ++){
-        printf("%d\n", score[i]);
-    }
+    //for(int i = 0; i < 5; i ++){
+    //    printf("%d\n", score[i]);
+    //}
     return 0;
 }
 
 int reset(){
     system("cls");
     count = 0;
+    n_score = 100;
     player[0] = 0;
     player[1] = 0;
     for(int i = 0;i < BOX_COUNT; i ++){
@@ -84,7 +85,7 @@ int getBox(int dx, int dy){
 }
 
 int saveScore(){
-    char src[] = "D:\\class\\c2023-challenge\\level1\\p08_push_boxes\\score.txt";
+    char src[] = "D:\\class\\r\\c2023-challenge\\level1\\p08_push_boxes\\score.txt";
     FILE *fp = fopen(src, "w");
     for(int i = 0; i < 5; i ++){
         fprintf(fp, "%d\n", score[i]);
@@ -136,6 +137,7 @@ int getKeyboardEvent(){
      * 获取键盘事件, 得到玩家的运动方向
      * */
     int input = getch();
+    // int none = getch();
     switch (input) {
         case 224:
             break;
@@ -149,20 +151,20 @@ int getKeyboardEvent(){
             return moveCheck(0, 1, 3);
         case RETRY:
             return -2;
-        case NEXT:
-            return -3;
+        //case NEXT:
+        //    return -3;
         default:
             return -1;
     }
-    return 0;
+    return -1;
 }
 
 void getMap(){
     count = 0;
     FILE *fp = NULL;
     // memset(p, '\0',7 ram_size * MAX_LEN);
-    char src[] = "D:\\class\\c2023-challenge\\level1\\p08_push_boxes\\pushBox1.txt";
-    src[54] = (char)(48 + level);
+    char src[] = "D:\\class\\r\\c2023-challenge\\level1\\p08_push_boxes\\pushBox1.txt";
+    src[56] = (char)(48 + level);
     //char src[] = ".\\pushBox1.txt";
     //src[9] = (char)(48 + level);
     // printf("%s", src);
@@ -230,6 +232,7 @@ void printMap(){
 
 int win(){
     if(n_score > score[level - 1]){
+        score[level - 1] = n_score;
         saveScore();
     }
     fflush(stdin);
@@ -246,16 +249,17 @@ int win(){
             return 0;
         }
         level ++;
-        reset();
         return 1;
     }
     return 0;
 }
 
 int pushBox(){
+    reset();
     getMap();
     printMap();
     // getKeyboardEvent();
+    //getScore();
     int ret;
     while(1){
         ret = getKeyboardEvent();
@@ -273,6 +277,9 @@ int pushBox(){
 }
 
 int main() {
+    /*
+     * Clion 工作区没在当前目录, 我直接用绝对路径了
+     * */
     // set buf(stdout, 0);
     while(pushBox());
     // getScore();

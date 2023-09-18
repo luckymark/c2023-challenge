@@ -37,6 +37,7 @@ void func(){
 
 int main() {
     func();
+
     /*
     for(int i = 1; i <= 100; i ++){
         if(isPrimeNumber(i)){
