@@ -8,20 +8,19 @@ int main() {
     int position = 0;
     int direction = 1;
 
-    char word[] = "Tangtang";
+    char word[] = "Uestc.ZhouZhengqi";
+    int lenth = strlen(word);
 
     while (1) {
-        system("cls");//这个好像有问题，不但清不了还会很混乱
-
+        system("cls");      //这个好像有问题，不但清不了还会很混乱
+        //位置移动
         for (int i = 0; i < position; i++) {
             printf(" ");
         }
-
         printf("%s\n", word);
-
         position += direction;
-
-        if (position >= SCREEN_WIDTH - sizeof(word) + 1 || position <= 0) {
+        //判断方向
+        if (position >= SCREEN_WIDTH - lenth + 1 || position <= 0) {
             direction *= -1;
         }
 
