@@ -1,25 +1,33 @@
 #include <stdio.h>
-#include <string.h>
+#include <windows.h>
 
-int main(){
+#define MAX 120
+#define SLEEP_TIME 10
+#define SPEED 1
 
-//    printf("hello world!");
-//    char key[]="zhouzhengqi";
-//    int  b = strlen(key);
-//    printf("%llu ", sizeof(key));
-//    printf("%d ",b);
-//
-//
-
-    typedef int int10[10];
-    int10 b[20];
-    int c[20][10];
-    b[10][5]=1;
-    printf("%d ",b[10][5]);
-
-
-
-
-
+int main() {
+    printf("hello world!\n");
+    //setbuf(stdout, 0);  // 禁用缓冲区
+    int index = 0;
+    char str[MAX] = {};
+    int last = 0;
+    char c = 'c';
+    int dx = SPEED;
+    while(1){
+        str[last] = last == MAX - 1 ? '\0' : ' ';
+        str[index] = c;
+        last = index;
+        printf("%s", str);
+        Sleep(SLEEP_TIME);
+        system("cls");
+        index += dx;
+        if(index >= MAX){
+            index = MAX - 1;
+            dx *= -1;
+        } else if(index < 0){
+            index = 0;
+            dx *= -1;
+        }
+    }
     return 0;
 }

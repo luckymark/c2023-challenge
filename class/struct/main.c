@@ -22,9 +22,9 @@ int main(){
     Project soft = {ZhangSan,LiSi};
     Project data = {};
     college computer ={soft,data};
-    char  * a = &ZhangSan;//怎么同时输出三个量;怎么使用指针修改里面的量
+    char  * a = &ZhangSan.dir;//怎么同时输出三个量;怎么修改里面的量
     char b[20] = "网络安全";
-    ZhangSan.dir = b;//这里为啥修改失败？
+    ZhangSan.dir = b;//这里为啥修改。失败？
     ZhangSan.age =  20;//这里也失败？
     printf("%d ",computer.a.a.age);
     printf("%s ",a);

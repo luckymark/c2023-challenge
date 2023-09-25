@@ -17,7 +17,7 @@ void hano(int n,char A,char B,char C){
 //这玩意自己写完都不知道他怎么能跑的
 
 int main(){
-    int n = 2;
+    int n = 3;
     hano(n,'A','B','C');
     return  0;
 }
