@@ -12,7 +12,7 @@ int main() {
     int lenth = strlen(word);
 
     while (1) {
-        system("cls");      //这个好像有问题，不但清不了还会很混乱
+        system("cls");
         //位置移动
         for (int i = 0; i < position; i++) {
             printf(" ");

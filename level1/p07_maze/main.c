@@ -66,7 +66,7 @@ int Move(){
             case 'a':flag = Left();break;
             case 's':flag = Down();break;
             case 'd':flag = Right();break;
-            case 27:return -1;//在VS中 实现esc退出
+            case 27:return -1;
         }
         if(flag == 2){
             Print();
@@ -233,21 +233,21 @@ void Print()
 {
     int i = 0, j = 0;
     str[0] = '\0';
-    //   system("cls");
+    system("cls");
     for (i = 0;i < M;i++)
     {
         for (j = 0;j < M;j++)
         {
             if (map[i][j] == 0)
             {
-                strcat(str, "回");
+                strcat(str, "■");
             }
                 //printf("■");
             else if (map[i][j] == -1)
                 break;
             else if (map[i][j] == 1)
             {
-                strcat(str, "  ");
+                strcat(str, " ");
             }
                 //printf("  ");
             else if (map[i][j] == 3)
