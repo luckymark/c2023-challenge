@@ -4,14 +4,14 @@
 #include <conio.h>
 
 #define N 2	//关卡数目
-#define M N*50	//地图大小	M*M
+#define M (N*50)	//地图大小	M*M
 int level = 0;//游戏等级
 int map[M + 1][M + 1] = { 0 };
 int count;//地图大小
 int my_x, my_y;//我的位置
 char str[2 * (M + 1)*(M + 1)] = { '\0' };
 
-void Initialize(int count);//初始化地图
+void Initialize(int num);//初始化地图
 void Print();//打印函数
 void find();//找到自己
 int Move();//控制移动

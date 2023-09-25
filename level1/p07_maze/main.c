@@ -4,7 +4,7 @@
 #include <conio.h>
 
 #define N 2	//关卡数目
-#define M N*50	//地图大小	M*M
+#define M (N*50)	//地图大小	M*M
 int level = 0;//游戏等级
 int map[M + 1][M + 1] = { 0 };
 int large;//地图大小
@@ -12,10 +12,10 @@ int my_x, my_y;//我的位置
 char str[2 * (M + 1)*(M + 1)] = { '\0' };
 
 void Menu();
-void Initialize(int large);
+void Initialize(int num);
 void Creat_01(int X_index, int Y_index);
 void Print();
-int Neighbor();
+int HaveNeighbor(int X_index, int Y_index);
 int Move();
 int FindMe();
 int Up();
@@ -29,7 +29,7 @@ int Right();
 int main(){
     system("chcp 65001");
     int flag = 0;
-    int s[100][100] = { 0 };
+ //   int s[100][100] = { 0 };
     srand((unsigned ) time(NULL));
     system("color 0A");
 
@@ -40,7 +40,6 @@ int main(){
         if (flag == 1||flag == -1)
             return 0;
     }
-    return 0;
 }
 
 int FindMe(){
@@ -147,58 +146,64 @@ int Left()
     }
     return 0;
 }
-int Neighbor(int X_index,int Y_index){
-    int i,j,flag = 0;
+int HaveNeighbor(int X_index, int Y_index){
+
     if(level == 0){
         if ((X_index >= 3 && map[X_index - 2][Y_index] == 1) || (X_index < large - 3 && map[X_index + 2][Y_index] == 1) || (Y_index >= 3 && map[X_index][Y_index - 2] == 1) || (Y_index < large - 3 && map[X_index][Y_index + 2] == 1))
             return  1;
         return  0;
     }
 }
-void Creat_01(int X_index, int Y_index){
-    int rand_direction,x,y,flag = 0;
+void Creat_01(int X_index, int Y_index)
+{
+    int rand_position, x, y, flag = 0;
     x = X_index;
     y = Y_index;
-    while(1){
+    //如果四个方向都没有了，返回上一步，否则，继续
+    while (1)
+    {
         flag = 0;
-        flag = Neighbor(X_index,Y_index);
-        if (flag == 0){
+        flag = HaveNeighbor(X_index, Y_index);
+        if (flag == 0)
+        {
             return;
         }
-        else{
+        else
+        {
             map[X_index][Y_index] = 5;
             x = X_index;
             y = Y_index;
-            while (1){
-                rand_direction = rand() % 4;
-                if (rand_direction == 0 && X_index >= 3 && map[X_index - 2][Y_index] == 1)//上
+            while (1)
+            {
+                rand_position = rand() % 4;
+                if (rand_position == 0 && X_index >= 3 && map[X_index - 2][Y_index] == 1)//上
                 {
                     X_index = X_index - 2;
                 }
-                else if (rand_direction == 1 && X_index < large - 3 && map[X_index + 2][Y_index] == 1)//下
+                else if (rand_position == 1 && X_index < large - 3 && map[X_index + 2][Y_index] == 1)//下
                 {
                     X_index = X_index + 2;
                 }
-                else if (rand_direction == 2 && Y_index >= 3 && map[X_index][Y_index - 2] == 1)//左
+                else if (rand_position == 2 && Y_index >= 3 && map[X_index][Y_index - 2] == 1)//左
                 {
                     Y_index -= 2;
                 }
-                else if (rand_direction == 3 && Y_index < large - 3 && map[X_index][Y_index + 2] == 1)//右
+                else if (rand_position == 3 && Y_index < large - 3 && map[X_index][Y_index + 2] == 1)//右
                 {
                     Y_index += 2;
                 }
-                map[(x+X_index) / 2][(y+Y_index) / 2] = 5;
+                map[(x + X_index) / 2][(y + Y_index) / 2] = 5;
                 map[X_index][Y_index] = 5;
-                Creat_01(X_index,Y_index);
+                Creat_01(X_index, Y_index);
                 break;
             }
         }
     }
 }
-void Initialize(int large)
+void Initialize(int num)
 {
     int i,j;
-    if(large % 2 == 0)
+    if(num % 2 == 0)
         large++;
     for(i = 0;i < large;i++)
         for(j = 0;j < large;j++)
@@ -213,8 +218,8 @@ void Initialize(int large)
     }
     if(level == 0)
         Creat_01(1, 1);
-    for (int i = 0; i < large; i++) {
-        for (int j = 0; j < large; j++) {
+    for (i = 0; i < large; i++) {
+        for (j = 0; j < large; j++) {
             if(map[i][j] == 5)
             {
                 map[i][j] = 1;
@@ -291,11 +296,6 @@ void Menu()
             if ('1' == select[0])
             {
                 level = 0;
-                break;
-            }
-            else if ('2' == select[0])
-            {
-                level = 1;
                 break;
             }
             else
