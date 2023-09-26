@@ -9,19 +9,19 @@ int level = 0;//游戏等级
 int map[M + 1][M + 1] = { 0 };
 int large;//地图大小
 int my_x, my_y;//我的位置
-char str[2 * (M + 1)*(M + 1)] = { '\0' };
+char str[2 * (M + 1)*(M + 1)] = { '\0' };//用来打印地图
 
-void Menu();
-void Initialize(int num);
-void Creat_01(int X_index, int Y_index);
-void Print();
-int HaveNeighbor(int X_index, int Y_index);
-int Move();
-int FindMe();
-int Up();
-int Down();
-int Left();
-int Right();
+void Menu();//菜单
+void Initialize(int num);//初始化地图
+void Creat_01(int X_index, int Y_index);//创建深度优先的随机地图
+void Print();//根据随机结果打印地图
+int HaveNeighbor(int X_index, int Y_index);//判断一个点是否有另一个为1的邻居点
+int Move();//移动及判定
+int FindMe();//找到当前所在位置
+int Up();//上
+int Down();//下
+int Left();//左
+int Right();//右
 
 
 
@@ -29,7 +29,6 @@ int Right();
 int main(){
     system("chcp 65001");
     int flag = 0;
- //   int s[100][100] = { 0 };
     srand((unsigned ) time(NULL));
     system("color 0A");
 
@@ -68,6 +67,7 @@ int Move(){
             case 'd':flag = Right();break;
             case 27:return -1;
         }
+        //行走成功再重新打印一次地图
         if(flag == 2){
             Print();
         }
@@ -170,9 +170,11 @@ void Creat_01(int X_index, int Y_index)
         }
         else
         {
+            //当前位置记为5
             map[X_index][Y_index] = 5;
             x = X_index;
             y = Y_index;
+            //随机方向产生地图，并把可通过路径记为5
             while (1)
             {
                 rand_position = rand() % 4;
@@ -195,6 +197,7 @@ void Creat_01(int X_index, int Y_index)
                 map[(x + X_index) / 2][(y + Y_index) / 2] = 5;
                 map[X_index][Y_index] = 5;
                 Creat_01(X_index, Y_index);
+                //递归结束break
                 break;
             }
         }
@@ -203,11 +206,14 @@ void Creat_01(int X_index, int Y_index)
 void Initialize(int num)
 {
     int i,j;
+    //地图只能是奇数
     if(num % 2 == 0)
         large++;
+    //地图初始化为0
     for(i = 0;i < large;i++)
         for(j = 0;j < large;j++)
             map[i][j] = 0;
+    //内部初始化间隔的1，外部初始化为-1
     for(i = 0;i < M;i++){
         for(j = 0;j < M;j++){
             if(i >= large || j>= large)
@@ -216,8 +222,10 @@ void Initialize(int num)
                 map[i][j] = 1;
         }
     }
+    //开始创建地图
     if(level == 0)
         Creat_01(1, 1);
+    //把随机的路径初始化为1
     for (i = 0; i < large; i++) {
         for (j = 0; j < large; j++) {
             if(map[i][j] == 5)
@@ -226,6 +234,7 @@ void Initialize(int num)
             }
         }
     }
+    //设置起点和终点
     map[1][1] = 3;
     map[large -2][large -2] = 4;
 }
@@ -280,7 +289,7 @@ void Print()
 void Menu()
 {
     char select[10];
-    printf("分别用wasd控制人物移动，按Esc退出游戏\n");
+    printf("分别用wasd控制人物移动，按Esc退出游戏，☆为终点⊙为玩家所在地\n");
     printf("请输入地图大小：");
     scanf("%d", &large);
     printf("请输入游戏难度(1、2):");
@@ -297,6 +306,10 @@ void Menu()
             {
                 level = 0;
                 break;
+            }
+            if ('2' == select[0])
+            {
+                printf("程序尚未实现！");
             }
             else
             {
