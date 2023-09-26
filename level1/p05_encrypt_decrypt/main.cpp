@@ -1,36 +1,12 @@
-#include <cstdio>
-#include <iostream>
-#include <string>
-#define 🥓 string
-#define 💀 0;
+#include "Crypter.h"
 using namespace std;
+char pswMap[]={'T','W','L','M'};
 
-using 👌=char;
-using 🗡=int;
-using 🍄=void;
-
-👌 🗺️[] = "Taylor Swift";
-
-🍄 🤔(🥓& 👻){
-    🗡 😊=👻.length();
-    for(int i=0;i<😊;i++){
-        👻[i]^=🗺️[i%13];
-    }
-}
-🍄 😊(🥓& 👻){
-    🗡 😊=👻.length();
-    for(int i=0;i<😊;i++){
-        👻[i]^=🗺️[i%13];
-    }
-}
-
-🗡 main() {
-    cout<<"Enter a string:"<<endl;
-    🥓 🌟;
-    getline(cin,🌟);
-    🤔(🌟);
-    cout<<🌟<<endl;
-    😊(🌟);
-    cout<<🌟<<endl;
-    return 💀;
+int main() {
+    string str;
+    cout<<"Enter a text to be encrypted:"<<endl;
+    cin>>str;
+    string en=Encrypt(str);
+    cout<<en<<endl;
+    cout<<"Decryption:"<<Decrypt(en)<<endl;
 }

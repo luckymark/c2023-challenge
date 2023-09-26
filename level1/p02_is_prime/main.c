@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "../p04_goldbach/header.h"
 
 int main() {
     //主要是为了无限测试
@@ -6,10 +7,7 @@ int main() {
         printf("Enter a num:");
         int n;
         scanf("%d", &n);
-        int count = 0;
-        for (int i = 1; i < n; i++)
-            count += n % i == 0;
-        printf("%s", count==1 ? "is prime!\r\n" : "no\r\n");
+        printf("%s", isPrime(n) ? "is prime!\r\n" : "no\r\n");
     }
     return 0;
 }
