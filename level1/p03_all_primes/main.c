@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "time.h"
 
 #define MAX 1000
 #define N 32 // 口算估出\sqrt{1000} 约等于32
@@ -38,6 +39,9 @@ int main() {
      * 埃氏筛      func1
      * 欧拉筛      func2
      * */
+    long start = clock();
     func1();
+    long end = clock();
+    printf("\ntime: %ld ms\n", end - start);
     return 0;
 }

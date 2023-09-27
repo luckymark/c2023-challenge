@@ -129,13 +129,48 @@ int decode(const char *str, int len, char *res, int *reLen){
         }
     }
     *reLen = re_len;
-
+    return 0;
 }
 
-int main() {
-    // setbuf(stdout, NULL);
-    char s[] = "Man is distinguished, not only by his reason, but by this singular passion from other animals, which is a lust of the mind, that by a perseverance of delight in the continued and indefatigable generation of knowledge, exceeds the short vehemence of any carnal pleasure.";
-    // char s[] = "help";
+int en_de(){
+    printf("pls input command: \n1: encrypt\n2: decrypt\n3: exit\n");
+    int cmd = 0;
+    if (scanf("%d", &cmd) != 1) {
+        printf("pls input an integer\n");
+        while (getchar() != '\n'); // 清空输入缓冲区
+        return 1;
+    }
+    while (getchar() != '\n'); // 清空输入缓冲区
+    if(cmd == 1){
+        char s[1024] = "";
+        printf("pls input string: \n");
+        gets(s);
+        int len = 0;
+        char *res = (char *)malloc(1024 * sizeof(char));
+        base64_encrypt(s, (int) strlen(s), res, &len);
+        printf("res: %s\n", res);
+        //printf("\n");
+        free(res);
+        /*
+        for(int i = 0; i < len; i ++){
+            printf("%c", res[i]);
+        }
+         */
+    }else if(cmd == 2){
+        char s[1024 * 4 / 3  + 1] = "";
+        printf("pls input string (in 1 line): \n");
+        scanf("%1023s", s);
+        char str2[1024] = {};
+        int len2 = 0;
+        decode(s, (int) strlen(s), str2, &len2);
+        printf("res: %s\n", str2);
+    }else if(cmd == 3){
+        return 0;
+    }
+    /*
+    char s[1024] = "";
+    printf("pls input string: \n");
+    scanf("%1023s", s);
     int len = 0;
     char *res = (char *)malloc(1024 * sizeof(char));
     base64_encrypt(s, (int) strlen(s), res, &len);
@@ -150,5 +185,15 @@ int main() {
         printf("%c", str2[i]);
     }
     free(res);
+    return 1;
+     */
+    return 1;
+}
+
+int main() {
+    // setbuf(stdout, NULL);
+    // char s[] = "Man is distinguished, not only by his reason, but by this singular passion from other animals, which is a lust of the mind, that by a perseverance of delight in the continued and indefatigable generation of knowledge, exceeds the short vehemence of any carnal pleasure.";
+    // char s[] = "help";
+    while (en_de());
     return 0;
 }
