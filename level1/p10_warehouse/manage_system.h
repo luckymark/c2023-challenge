@@ -27,6 +27,7 @@ Node *delete(Node *nd, Cargo tar);
 void print(Node *nd);
 int search(Node *nd, Cargo tar);
 Node *r_sort(Node *nd);
+
 int saveData(Node *cargos);
 Node *getData(Node *cargos);
 Node *add_cargo(Node *cargos, Cargo tar);

@@ -5,10 +5,6 @@
 
 extern Node *cargos;
 
-int get_line(char *str){
-    while(getchar() != '\n')
-}
-
 int main_menu(){
     char str[] = "1: 入库\n"
                  "2: 出库\n"

@@ -48,16 +48,27 @@ Node *r_sort(Node *nd){
     }
     return lp;
 }
-/*
+
 Node *delete(Node *hd, Cargo tar){
     Node *p = hd;
-    int index = 1;
+    if(p == NULL){
+        printf("not found");
+        return hd;
+    }
+    if(p -> value.id == tar.id && (strcmp(p -> value.name, tar.name) == 0)){
+        return p -> next;
+    }
+    Node *lp = p;
     while(p != NULL){
         if(p -> value.id == tar.id && (strcmp(p -> value.name, tar.name) == 0)){
-
+            lp -> next = p -> next;
+            free(p);
+            return hd;
         }
+        lp = p;
         p = p -> next;
-        index ++;
     }
+    printf("Not Found");
+    return hd;
 }
- */
+

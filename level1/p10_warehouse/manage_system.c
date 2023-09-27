@@ -84,7 +84,8 @@ Node *delete_cargo(Node *cargos, Cargo tar){
     int ret = search(cargos, tar);
     if(ret != -1){
         Node *p = cargos;
-        while(ret-- >= 0 && p -> next != NULL){
+        while(ret > 1 && p -> next != NULL){
+            ret --;
             p = p -> next;
         }
         if(strcmp(p -> value.name, tar.name) != 0){
@@ -98,7 +99,10 @@ Node *delete_cargo(Node *cargos, Cargo tar){
         if(p -> value.count > tar.count){
             p -> value.count -= tar.count;
         }else if(p -> value.count == tar.count){
-
+            return delete(cargos, tar);
+        }else{
+            printf("insufficient quantity of cargos");
+            return cargos;
         }
         return cargos;   // 已有
     }else{

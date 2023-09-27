@@ -42,7 +42,7 @@ int goal[GOAL_COUNT][2];
 int level = 1;
 int score[5] = {0, 0, 0, 0, 0};
 int count = 0;
-int n_score = 100;
+int n_score = 200;
 
 int getScore(){
     char src[] = "D:\\class\\r\\c2023-challenge\\level1\\p08_push_boxes\\score.txt";
@@ -61,7 +61,7 @@ int getScore(){
 int reset(){
     system("cls");
     count = 0;
-    n_score = 100;
+    n_score = 200;
     player[0] = 0;
     player[1] = 0;
     for(int i = 0;i < BOX_COUNT; i ++){
@@ -112,6 +112,9 @@ int moveCheck(int dx, int dy, int dir){
         }
     }
     n_score --;
+    if(n_score == 0){
+        return -10;
+    }
     map[player[0]][player[1]] = SPACE;
     player[0] += dx;
     player[1] += dy;
@@ -163,8 +166,9 @@ void getMap(){
     count = 0;
     FILE *fp = NULL;
     // memset(p, '\0',7 ram_size * MAX_LEN);
-    char src[] = "D:\\class\\r\\c2023-challenge\\level1\\p08_push_boxes\\pushBox1.txt";
-    src[56] = (char)(48 + level);
+    char src[] = "D:\\class\\d\\level1\\p08_push_boxes\\pushBox1.txt";
+    int len = strlen(src);
+    src[len - 5] = (char)(48 + level);
     //char src[] = ".\\pushBox1.txt";
     //src[9] = (char)(48 + level);
     // printf("%s", src);
@@ -270,6 +274,14 @@ int pushBox(){
         }
         system("cls");
         printMap();
+        if(ret == -10){
+            printf("waste!!!\n");
+            printf("press any key to retry\n");
+            getchar();
+            reset();
+            getMap();
+            return 1;
+        }
         if(isWin()){
             return win();
         }
