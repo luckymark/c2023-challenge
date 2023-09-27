@@ -21,7 +21,7 @@ typedef struct Pos
 
 HANDLE handle_out;
 bool   mp[MAZE_WIDTH][MAZE_HIGHTH]={};
-pos    start,end,usr;
+pos    start,End,usr;
 
 void MoveCursor(int,int);
 void InitMaze();
@@ -141,22 +141,22 @@ void InitMaze()
 
     start.x=0;
     start.y=1;
-    end.x=0;
-    end.y=MAZE_HIGHTH-2;
+    End.x=0;
+    End.y=MAZE_HIGHTH-2;
 
-    while(abs(start.x-end.x)<3)
+    while(abs(start.x-End.x)<3)
     {
         start.x=random(1,MAZE_WIDTH-2);
-        end.x=random(1,MAZE_WIDTH-2);
+        End.x=random(1,MAZE_WIDTH-2);
     }
     pave(start.x,0);
-    pave(end.x,MAZE_HIGHTH-1);
+    pave(End.x,MAZE_HIGHTH-1);
 
     gPath(start,Point(3,3));
     gPath(start,Point(3,2));
     gPath(start,Point(1,2));
     gPath(Point(1,2),Point(1,1));
-    gPath(Point(3,3),end);
+    gPath(Point(3,3),End);
     gPath(Point(4,4),start);
     gPath(Point(1,4),start);
     gPath(Point(4,1),start);
