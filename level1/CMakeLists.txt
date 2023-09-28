@@ -24,4 +24,6 @@ add_executable(p09_linked_list p09_linked_list/main.cpp
         p09_linked_list/NodeList.h
 )
 
-add_executable(p10_warehouse p10_warehouse/main.cpp)
+add_executable(p10_warehouse p10_warehouse/main.cpp
+        p10_warehouse/StoreHelper.cpp
+        p10_warehouse/StoreHelper.h)
