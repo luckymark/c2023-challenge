@@ -3,13 +3,7 @@
 #include<windows.h>
 int main() {
     char maze[20][30];
-    for(int i=0;i<20;i++)
-    {
-        for(int j=0;j<30;j++)
-            maze[i][j]='*';
-    }
     init_maze(maze);
-    maze[0][3]='@';
     int x=3,y=0;
     while(1){
         for(int i=0;i<20;i++)

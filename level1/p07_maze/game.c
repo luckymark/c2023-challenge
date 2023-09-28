@@ -2,34 +2,30 @@
 // Created by 14212 on 2023/9/22.
 //
 #include"game.h"
+#include<stdio.h>
 void init_maze(char ch[][30]){//可以尝试指针表示法
-    for(int i=0;i<=10;i++)
-        ch[i][3]=' ';
-    for(int i=3;i<=17;i++)
-        ch[10][i]=' ';
-    for(int i=10;i>=4;i--)
-        ch[i][17]=' ';
-    for(int i=17;i>=14;i--)
-        ch[4][i]=' ';
-    for(int i=7;i<=22;i++)
-        ch[6][i]=' ';
-    for(int i=6;i>=1;i--)
-        ch[i][7]=' ';
-    for(int i=7;i<=26;i++)
-        ch[1][i]=' ';
-    for(int i=1;i<=16;i++)
-        ch[i][26]=' ';
-    ch[15][27]=ch[15][28]=' ';
-    for(int i=6;i<=26;i++)
-        ch[16][i]=' ';
-    ch[17][16]=' ';
-    for(int i=16;i<=22;i++)
-        ch[18][i]=' ';
-    ch[15][11]=ch[14][11]=' ';
-    for(int i=1;i<=11;i++)
-        ch[13][i]=' ';
-    for(int i=13;i<=19;i++)
-        ch[i][1]=' ';
+
+    FILE * fp;
+    char c;
+    fp=fopen("D:/c2023-challenge/level1/c2023-challenge/level1/p07_maze/maze.txt","r+");
+    while((c=getc(fp))<0)
+        continue;
+    for(int i=0;i<20;i++)
+    {
+        for(int j=0;j<31;)
+        {
+            if(c=='\n')
+            {
+                c=getc(fp);
+                break;
+            }
+            ch[i][j]=c;
+            j++;
+            c=getc(fp);
+
+        }
+    }
+    fclose(fp);
 }
 int sum(int down,int up,int left,int right){
     int cnt=0;
