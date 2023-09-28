@@ -45,13 +45,14 @@ int main(){
 
 void Menu(){
     printf("使用wsad控制上下左右，esc退出，☆为终点⊙为玩家所在地\n");
-    printf("请输入地图大小（<100)（请输入奇数，输入偶数会自动+1）\n");
+    printf("请输入地图大小（3~100)（请输入奇数，输入偶数会自动+1）\n");
     while (1){
         scanf("%d", &large);
-        if(100 <= large || 0 >= large){
-            printf("输入错误请重新输入！");
+        if(100 <= large || 3 >= large){
+            printf("输入错误请重新输入！\n");
         }
-        break;
+        else if(3 < large && 100 > large)
+            break;
     }
     printf("请输入游戏难度(1、2):\n");
     while (1){
@@ -71,7 +72,7 @@ void Menu(){
 void Initialize(int num){
     int i = 0,j = 0;
     //地图只能是奇数
-    if(large % 2 == 0)
+    if(num % 2 == 0)
         large++;
     //地图初始化为0内部初始化间隔的1，外部初始化为-1
     for(i = 0;i < large;i++){
