@@ -155,6 +155,7 @@ int Move(){
             //返回为2则成
         else if(2 == flag){
             printf("挑战成功！\n");
+            MessageBoxW(NULL, L"恭喜通关！", L"恭喜！", MB_OK);
             system("pause");
             return 1;
         }
