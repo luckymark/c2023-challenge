@@ -66,7 +66,6 @@ void Menu(){
             break;
     }
 
-
 }
 
 void Initialize(int num){
