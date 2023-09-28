@@ -248,6 +248,7 @@ void Creat_01(int x,int y){
                 Creat_01(x,y);
                 break;
             }
+
         }
         else
             return;
