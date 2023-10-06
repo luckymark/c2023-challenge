@@ -1,31 +1,60 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <windows.h>
-#include <unistd.h>
+
+#define RIGHT 00
+#define LEFT  1
 
 
-void Running_letter(){
-    int i, j, f, k;
-    for (i = 1; i <= 140; i ++) {
-        printf("%c", 'A');
-        usleep(4800);
-        system("cls");
-        for (j = 0; j < i; j ++){
-            printf(" ");
+HANDLE hd;
+int width,dir=RIGHT;
+void move(int x,int y)
+{
+    COORD pos={x,y};
+    SetConsoleCursorPosition(hd,pos);
+    return;
+}
+void GetSize()
+{
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    GetConsoleScreenBufferInfo(hd,&info);
+    width=info.srWindow.Right;
+    return;
+}
+int ne(int now)
+{
+    if(dir==RIGHT)
+    {
+        if(now!=width) return now+1;
+        else
+        {
+            dir=LEFT;
+            return now-1;
         }
-        j --;
     }
-    for (f = 1; f <= 140; f ++) {
-        printf("%c", 'A');
-        usleep(4800);
-        system("cls");
-        for (k = 79; k > f; k --){
-            printf(" ");
+    else
+    {
+        if(now) return now-1;
+        else
+        {
+            dir=RIGHT;
+            return now+1;
         }
-        k ++;
     }
 }
 
-int main(){
-    Running_letter();
+int main() {
+    int now;
+    hd= GetStdHandle(STD_OUTPUT_HANDLE);
+    GetSize();
+    printf("a");
+    while(1)
+    {
+        move(now,0);
+        printf(" ");
+        now=ne(now);
+        move(now,0);
+        printf("a");
+        Sleep(25);
+    }
+    return 0;
 }
