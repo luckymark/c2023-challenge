@@ -13,7 +13,16 @@ add_executable(p05_encrypt_decrypt p05_encrypt_decrypt/main.c)
 
 add_executable(p06_hanoi p06_hanoi/main.c)
 
-add_executable(p07_maze p07_maze/main.c)
+add_executable(p07_maze p07_maze/main.c
+        p07_maze/head_maze.h
+        p07_maze/creat.c
+        p07_maze/initialize.c
+        p07_maze/menu.c
+        p07_maze/have_neighbor.c
+        p07_maze/move.c
+        p07_maze/print.c
+        p07_maze/direction.c
+)
 
 add_executable(p08_push_boxes p08_push_boxes/main.c)
 
@@ -21,4 +30,7 @@ add_executable(p09_linked_list p09_linked_list/main.c)
 
 add_executable(p10_warehouse p10_warehouse/main.c)
 
-add_executable(temp temp/main.c)
+add_executable(temp temp/main.c
+        temp/head_temp.h
+        temp/creat.c
+        temp/menu.c)
