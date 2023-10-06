@@ -20,7 +20,7 @@ int main()
 {
     CONSOLE_CURSOR_INFO c={1,0};
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&c);
-    printf("使用 w s a d控制人物T移动..\r\n");
+    printf("浣跨敤 w s a d鎺у埗浜虹墿T绉诲姩..\r\n");
     system("pause");
     system("cls");
     for(int i=0;i<=10;i++)

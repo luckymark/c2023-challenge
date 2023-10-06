@@ -1,8 +1,8 @@
 #include "StoreHelper.h"
 /*
- * �������c++��ֱ����json/xml/ini�ģ����ǵ��ִ�һ��������
- * �Ͳ��ٱ���������Χ��(��Ҫ��C# �ַ��ӵ�����...)
- * ����ֱ�Ӵֱ��ض�д�ļ� �ܴ�һ����һ��..
+ * 幻想过在c++上直接上json/xml/ini的，但是得手搓一个解析器
+ * 就不再本渣能力范围了(这要是C# 分分钟的事情...)
+ * 于是直接粗暴地读写文件 能创一个是一个..
  *
  * */
 
@@ -14,10 +14,10 @@ int main() {
 
     for(;;) {
     IndexList();
-    string text = "1.��ʾ����б�\r\n"
-                  "2.���\r\n"
-                  "3.����\r\n"
-                  "4.�˳�����\r\n";
+    string text = "1.显示存货列表\n"
+                  "2.入库\n"
+                  "3.出库\n"
+                  "4.退出程序\n";
     cout << text << endl;
     int ord;
     scanf("%d", &ord);

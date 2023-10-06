@@ -8,7 +8,7 @@
 ///C0
 int main(){
     setbuf(stdout,NULL);
-    printf("Hello world£¡I'm ³ÂÖş½­£¡");
+    printf("Hello worldï¼I'm é™ˆç­‘æ±Ÿï¼");
 
     extern int MaxNum_v3(int,...);
     printf("Max = %d",MaxNum_v3(5,2,1,9,8,88));
@@ -60,7 +60,7 @@ int isEvenNum(int n){
     return n%2==0;
 }
 ///C1 3.
-///Bing Says:ÄÜ±»4Õû³ı¡¢µ«²»ÄÜ±»100Õû³ı£¬»òÄÜ±»400Õû³ıµÄÄê·İÎªÈòÄê
+///Bing Says:èƒ½è¢«4æ•´é™¤ã€ä½†ä¸èƒ½è¢«100æ•´é™¤ï¼Œæˆ–èƒ½è¢«400æ•´é™¤çš„å¹´ä»½ä¸ºé—°å¹´
 int isLeapYear(int year){
     return (year%4==0&&year%100!=0)||year%400==0;
 }
@@ -88,7 +88,7 @@ int MaxNum_v3(int NumCount,...){
 ///C2 1.
 void SayHello(){
     for(int i=0;i<10000;i++){
-        printf("ÄãºÃ£¡");
+        printf("ä½ å¥½ï¼");
     }
 }
 ///C2 2.
@@ -122,10 +122,10 @@ void Print99Chart(){
         printf("\r\n");
     }
 }
-///ÊäÈën¸öÊı(?¿ÉÒÔ²»ÊÇ)È»ºóµ¹×ÅÊä³ö
+///è¾“å…¥nä¸ªæ•°(?å¯ä»¥ä¸æ˜¯)ç„¶åå€’ç€è¾“å‡º
 void PrintReverse(){
     int n;
-    printf("ÊäÈën¸öÊı(or any)£¬²¢½«ËüÃÇÄæĞòÊä³ö n=");
+    printf("è¾“å…¥nä¸ªæ•°(or any)ï¼Œå¹¶å°†å®ƒä»¬é€†åºè¾“å‡º n=");
     scanf("%d",&n);
     printf("Enter nums split by ','\r\n");
     char str[100];
@@ -146,7 +146,7 @@ void PrintReverse(){
 
 void PopOutExistence(){
     char n[6];
-    printf("ÊäÈë5¸ö0-9µÄÊı,Êä³ö0-9ÖĞÃ»ÓĞ³öÏÖ¹ıµÄÊı£º");
+    printf("è¾“å…¥5ä¸ª0-9çš„æ•°,è¾“å‡º0-9ä¸­æ²¡æœ‰å‡ºç°è¿‡çš„æ•°ï¼š");
     scanf("%s",n);
     char std[] ="0123456789";
     for(int i=0;i<5;i++){
@@ -158,9 +158,9 @@ void PopOutExistence(){
 }
 void Sort(){
     int n[6];
-    printf("\r\nÊäÈë5¸ö0-9µÄÊı(¿Õ¸ñ¸ô¿ª) È»ºó´ÓĞ¡µ½´óÅÅĞò£º");
+    printf("\r\nè¾“å…¥5ä¸ª0-9çš„æ•°(ç©ºæ ¼éš”å¼€) ç„¶åä»å°åˆ°å¤§æ’åºï¼š");
     scanf("%d %d %d %d %d",&n[0],&n[1],&n[2],&n[3],&n[4]);
-    //Ã°¸öÅİ
+    //å†’ä¸ªæ³¡
     int c;
     for(int i=0;i<5;i++){
         for(int j=0;j<5;j++){
@@ -181,14 +181,14 @@ int Plus(int data[],int length){
         value+=data[i];
     return value;
 }
-//½×³Ë!
+//é˜¶ä¹˜!
 int Factorial(int n){
     int value=1;
     for(int i=1;i<n+1;i++)
         value*=i;
     return value;
 }
-//ì³²¨ÄÇÆõÊıÁĞ
+//æ–æ³¢é‚£å¥‘æ•°åˆ—
 void Fibonacci(int a1,int a2,int length){
     int a=a1,b=a2,c;
     for(int i=0;i<length-1;i++){
@@ -198,7 +198,7 @@ void Fibonacci(int a1,int a2,int length){
         a2=c;
     }
 }
-//ÊÇ·ñÎªÖ±½ÇÈı½ÇĞÎ
+//æ˜¯å¦ä¸ºç›´è§’ä¸‰è§’å½¢
 int IsRT(int a,int b,int c){
     return pow(a,2)+pow(b,2)==pow(c,2)||
             pow(a,2)+pow(c,2)==pow(b,2)||
@@ -206,5 +206,5 @@ int IsRT(int a,int b,int c){
 }
 
 float USDToRMB(float USD){
-    return USD*7.34;//9ÔÂ8ÈÕ UTC 21:00
+    return USD*7.34;//9æœˆ8æ—¥ UTC 21:00
 }

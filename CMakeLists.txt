@@ -5,7 +5,6 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(level1)
-add_executable(level0 level0/main.c
-        level0/bubbleSort/main.c)
+add_executable(level0 level0/main.c)
 add_executable(level0_bs level0/bubbleSort/main.c)
 add_executable(level2_PI level2/PI/main.cpp)

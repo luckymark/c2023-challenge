@@ -69,10 +69,10 @@ int main()
 {
     CONSOLE_CURSOR_INFO c={1,0};
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&c);
-    printf("Ê¹ÓÃ w s a d¿ØÖÆÈËÎïTÒÆ¶¯ ½«'@'ÈÓ½øÀ¬»øÍ°'*'´¦\r\n");
+    printf("ä½¿ç”¨ w s a dæŽ§åˆ¶äººç‰©Tç§»åŠ¨ å°†'@'æ‰”è¿›åžƒåœ¾æ¡¶'*'å¤„\r\n");
     system("pause");
 
-    //¶ÁÈ¡ÉÏÒ»´ÎÓÎÏ·½ø¶È..
+    //è¯»å–ä¸Šä¸€æ¬¡æ¸¸æˆè¿›åº¦..
     ifstream is(CachePath);
     if(is.good()){
         fstream fs;
@@ -101,14 +101,14 @@ int main()
             MapData.push_back(stringSplit(dt[i],','));
         }
         if(MapIndex>=MapData.size()){
-            cout<<"ÔÙÀ´Ò»¾Ö?\r\n"<<endl;
+            cout<<"å†æ¥ä¸€å±€?\r\n"<<endl;
             system("pause");
             MapIndex=0;
         }
         map= MapData[MapIndex];
     }
 for(;;) {
-    SetConsoleTitle(("µ±Ç°¹Ø¿¨:" + to_string(MapIndex+1)).c_str());
+    SetConsoleTitle(("å½“å‰å…³å¡:" + to_string(MapIndex+1)).c_str());
     system("cls");
     for (int i = 0; i <= 10; i++)
         cout << map[i] << endl;

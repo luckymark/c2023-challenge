@@ -29,5 +29,5 @@ void BubbleSort(int n[],int count){
     for(int i=0;i<count;i++)
         printf("%d ",n[i]);
     done=clock();
-    printf("ÓÃÊ±:%f ms\r\n",(double)(done-start));
+    printf("Finished in %f ms\r\n",(double)(done-start));
 }

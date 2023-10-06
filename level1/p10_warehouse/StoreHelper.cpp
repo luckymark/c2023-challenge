@@ -32,7 +32,7 @@ string DataBuilder(Item item) {
     return item.id+spilt+item.name+spilt+item.count;
 }
 string ItemString(Item item){
-    return "货号:"+item.id+" 名称:"+item.name+" 数量:"+item.count+"\r\n";
+    return "璐у彿:"+item.id+" 鍚嶇О:"+item.name+" 鏁伴噺:"+item.count+"\r\n";
 }
 bool isIDExist(string id){
     for(string i :IdList)
@@ -47,7 +47,7 @@ void IndexList(){
     if(fs.is_open()){
         string str;
         while(getline(fs,str)){
-            //执行strtok会将spilt->\0..
+            //鎵цstrtok浼氬皢spilt->\0..
             vector data=stringSplit(str,spilt);
             IdList.push_back(data[0]);
             DataList.push_back(Item{data[0],data[1],data[2]});
@@ -62,30 +62,30 @@ void ShowList(){
 }
 
 void WriteLine(){
-    cout<<"输入货号:"<<endl;
+    cout<<"杈撳叆璐у彿:"<<endl;
     string id;
     cin>>id;
     if(isIDExist(id)){
         cout<<"This id has existed!"<<endl;
         return;
     }
-    cout<<"输入名称:"<<endl;
+    cout<<"杈撳叆鍚嶇О:"<<endl;
     string name;
     cin>>name;
-    cout<<"数量:"<<endl;
+    cout<<"鏁伴噺:"<<endl;
     string count;
     cin>>count;
 
     fstream fs;
     fs.open(path,ios::app);
     if(fs.is_open()){
-        fs<<DataBuilder(Item{id,name,count})<<"\r\n";
+        fs<<DataBuilder(Item{id,name,count})<<"\n";
         fs.close();
     }
 }
-//使用复写的垃圾方法emmm..
+//浣跨敤澶嶅啓鐨勫瀮鍦炬柟娉昬mmm..
 void PopOut(){
-    cout<<"输入货号:"<<endl;
+    cout<<"杈撳叆璐у彿:"<<endl;
     string id;
     cin>>id;
 
@@ -100,7 +100,7 @@ void PopOut(){
             vector data=stringSplit(str,'|');
             Item dt{data[0],data[1],data[2]};
             if(data[0]!=id)
-                filedata+= DataBuilder(dt)+"\r\n";
+                filedata+= DataBuilder(dt)+"\n";
             else {
                 found=true;
                 result=dt;
@@ -115,6 +115,6 @@ void PopOut(){
             writer << filedata;
             writer.close();
         }
-        cout<<"已出库： "<<ItemString(result)<<endl;
-    }else cout<<"??找不到此货号..\r\n"<<endl;
+        cout<<"宸插嚭搴擄細 "<<ItemString(result)<<endl;
+    }else cout<<"??鎵句笉鍒版璐у彿..\n"<<endl;
 }
