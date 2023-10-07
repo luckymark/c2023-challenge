@@ -25,11 +25,17 @@ void CreateDataFile();
 vector<string> stringSplit(const string& strIn, char delim);
 string DataBuilder(Item item);
 string ItemString(Item item);
-bool isIDExist(string id);
+bool isIDExist(string id,vector<Item>::iterator& ref);
 
+//从文件中读取库数据
 void IndexList();
+//打印数据表格
 void ShowList();
+//入库
 void WriteLine();
+//出库
 void PopOut();
+//保存库数据到文件
+void SaveDataToFile();
 
 #endif //C2023_CHALLENGE_STOREHELPER_H

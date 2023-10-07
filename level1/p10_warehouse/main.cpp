@@ -11,13 +11,13 @@ const string path="data.tw";
 
 int main() {
     CreateDataFile();
+    IndexList();
 
     for(;;) {
-    IndexList();
     string text = "1.显示存货列表\n"
                   "2.入库\n"
                   "3.出库\n"
-                  "4.退出程序\n";
+                  "4.保存并退出程序\n";
     cout << text << endl;
     int ord;
     scanf("%d", &ord);
@@ -33,6 +33,7 @@ int main() {
             PopOut();
             break;
         case 4:
+            SaveDataToFile();
             exit(0);
     }
     system("pause");
