@@ -26,4 +26,6 @@ add_executable(p08_push_boxes p08_push_boxes/main.cpp
 
 add_executable(p09_linked_list p09_linked_list/main.c)
 
-add_executable(p10_warehouse p10_warehouse/main.c)
+add_executable(p10_warehouse p10_warehouse/main.cpp
+        p10_warehouse/WareHouse.cpp
+        p10_warehouse/WareHouse.h)
