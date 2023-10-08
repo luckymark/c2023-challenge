@@ -24,13 +24,20 @@ add_executable(p07_maze p07_maze/main.c
         p07_maze/direction.c
 )
 
-add_executable(p08_push_boxes p08_push_boxes/main.c)
+add_executable(p08_push_boxes p08_push_boxes/main.c
+        p08_push_boxes/map.c
+        p08_push_boxes/head_push_box.h
+        p08_push_boxes/print.c
+        p08_push_boxes/menu.c
+        p08_push_boxes/push.c
+        p08_push_boxes/direction.c
+        p08_push_boxes/whether_finish.c
+        p08_push_boxes/note.c
+        p08_push_boxes/steps.c)
 
 add_executable(p09_linked_list p09_linked_list/main.c)
 
 add_executable(p10_warehouse p10_warehouse/main.c)
 
 add_executable(temp temp/main.c
-        temp/head_temp.h
-        temp/creat.c
-        temp/menu.c)
+)

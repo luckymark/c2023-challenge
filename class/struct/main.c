@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <string.h>
 
 int main(){
     system("chcp 65001");
@@ -24,8 +25,9 @@ int main(){
     college computer ={soft,data};
     char  * a = &ZhangSan.dir;//
     char b[20] = "网络安全";
-    ZhangSan.dir = b;//这里为啥修改。失败？
+ //   ZhangSan.dir = "bbbb";//这里为啥修改。失败？
     ZhangSan.age =  20;//这里也失败？
-    printf("%d ",computer.a.a.age);
+    strcpy(ZhangSan.name, "小红");
+    printf("%s ",computer.a.a.name);
     printf("%s ",a);
 }

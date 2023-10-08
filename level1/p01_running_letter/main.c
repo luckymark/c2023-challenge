@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
+
 
 #define SCREEN_WIDTH 80
 
@@ -27,5 +29,4 @@ int main() {
         usleep(100000); // 控制运动速度，单位为微秒
     }
 
-    return 0;
 }
