@@ -6,6 +6,7 @@ int extern goal1_x,goal1_y,goal2_x,goal2_y,goal3_x,goal3_y,goal4_x,goal4_y,goal5
 //目标点全完成则关卡成功
 int Finish()
 {
+
     if(1 == level)
     {
         if(5 == map[goal1_x][goal1_y] && 5 == map[goal2_x][goal2_y] && 5 == map[goal3_x][goal3_y] && 5 == map[goal4_x][goal4_y])
