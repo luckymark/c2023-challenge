@@ -15,6 +15,7 @@ void ClearConsole()
 }
 void Print()
 {
+
     int i = 0,j = 0;
     //将str初始化为空
     str[0] = '\0';
