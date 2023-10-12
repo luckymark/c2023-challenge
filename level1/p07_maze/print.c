@@ -4,13 +4,21 @@
 extern char str[(102) * (102)];
 extern int large;
 extern int map[101][101];
-
+void ClearConsole()
+{
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD home = {0, 0};
+    DWORD written;
+    FillConsoleOutputCharacter(hOut, ' ', 80 * 25, home, &written);
+    FillConsoleOutputAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE, 80 * 25, home, &written);
+    SetConsoleCursorPosition(hOut, home);
+}
 void Print()
 {
     int i = 0,j = 0;
     //将str初始化为空
     str[0] = '\0';
-    system("cls");
+    ClearConsole();
     for(i = 0;i < large;i++)
     {
         for (j = 0; j < large; j++)

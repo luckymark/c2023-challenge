@@ -16,11 +16,10 @@ char str[(102) * (102)] = {'\0'};
 
 
 
-
 int main(){
     system("chcp 65001");
     system("color 0A");
-    srand((unsigned )time(NULL));
+    srand((unsigned int)time(NULL));
     int flag = 0;
     Menu();
     Initialize(large);
