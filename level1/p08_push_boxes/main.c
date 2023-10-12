@@ -7,8 +7,7 @@ char str[(15) * (15)] = {'\0'};//输出地图用的数组
 int now_x,now_y;//储存当前所在位置
 int goal1_x,goal1_y,goal2_x,goal2_y,goal3_x,goal3_y,goal4_x,goal4_y,goal5_x,goal5_y;//储存目标点位置
 int level = 0;//游戏等级
-int step[5] = {0},now_step = 0;//记录步数即得分
-
+int step[5] = { 0 },now_step = 0,sure_step = 99999999;//记录步数即得分
 //-1-空地，0-墙，1-路，2-箱子，3-人，4-目标，5-达成目标
 int map[10][10] = {{1,1,1,1,1,1,1,1,1,1},
                    {1,1,1,1,1,1,1,1,1,1},

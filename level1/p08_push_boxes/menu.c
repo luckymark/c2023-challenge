@@ -5,7 +5,7 @@ void Menu(){
     printf("请输入关卡数(1~5)\n");
 
     while (1){
-        scanf("%d",&level);
+        scanf_s("%d",&level);
         if(1 != level &&2 != level && 3 != level && 4 != level && 5 != level)
         {
             printf("输入错误请重新输入！");

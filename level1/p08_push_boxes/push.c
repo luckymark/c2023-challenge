@@ -8,6 +8,7 @@ int extern now_x,now_y;
 extern int level;
 extern int step[5];
 extern int now_step;
+extern int sure_step;
 
 int FindMe(){
     int i,j;
@@ -53,6 +54,7 @@ int Push()
         else if(2 == flag)
         {
             now_step++;
+            sure_step = now_step;
             step[level - 1] = now_step;
             Print();
             printf("挑战成功！\n");

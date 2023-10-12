@@ -4,12 +4,14 @@
 
 extern char str[(15) * (15)];
 extern int map[10][10];
-extern int min_step;
+extern int sure_step;
 extern int level;
+extern int now_step;
+
 
 void Print()
 {
-    int i = 0,j = 0;
+    int i = 0,j = 0,min_ = 0;
     //将str初始化为空
     str[0] = '\0';
     system("cls");
@@ -55,6 +57,17 @@ void Print()
         }
 
     }
-    printf("按'r'重新开始本关卡");
+
+    min_ = Min_step(level);
+    printf("按'r'重新开始本关卡\n");
+    printf("当前步数：%d\n",now_step);
     printf("%s",str);
+    if(99999999 != min_ && 0 != min_)
+    {
+        printf("本关卡目前最小步数为：%d\n",min_);
+    }
+    else
+    {
+        printf("本关卡暂时没有最佳成绩\n");
+    }
 }

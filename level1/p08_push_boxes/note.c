@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-extern int now_step;
+
 extern int step[5];
 void Note()
 {
