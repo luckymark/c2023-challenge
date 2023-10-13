@@ -1,11 +1,7 @@
 #include <stdio.h>
 void move(int cap,int tar,int buffer,int num)
 {
-    if(num==1)
-    {
-        printf("%c->%c\n",cap-1+'A',tar-1+'A');
-        return;
-    }
+    if(num==0) return;
     move(cap,buffer,tar,num-1);
     printf("%c->%c\n",cap-1+'A',tar-1+'A');
     move(buffer,tar,cap,num-1);
