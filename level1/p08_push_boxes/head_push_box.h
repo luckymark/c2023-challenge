@@ -10,7 +10,6 @@ int Right();
 int Finish();//判断是否结束
 void Note();//记录得分
 void Read();
-int Min_step(int l);//暂未实现的设想
 //想用结构体存目标位置失败了
 typedef struct {
     int x;

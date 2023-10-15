@@ -33,6 +33,8 @@ int main() {
             return 0;
         }
         Map();
+        sure_step = 99999999;
+        Read();
         Print();
         while (1){
             flag = Push();

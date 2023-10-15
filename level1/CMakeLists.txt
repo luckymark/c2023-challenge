@@ -33,7 +33,6 @@ add_executable(p08_push_boxes p08_push_boxes/main.c
         p08_push_boxes/direction.c
         p08_push_boxes/whether_finish.c
         p08_push_boxes/note.c
-        p08_push_boxes/steps.c
         p08_push_boxes/read.c)
 
 add_executable(p09_linked_list p09_linked_list/main.c)

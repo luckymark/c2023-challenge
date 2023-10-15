@@ -55,7 +55,7 @@ int Push()
         {
             now_step++;
             sure_step = now_step;
-            step[level - 1] = now_step;
+            step[level - 1] = sure_step;
             Print();
             printf("挑战成功！\n");
             int result = MessageBoxW(NULL, L"恭喜通过本关！是否进行下一关卡", L"恭喜！", MB_YESNO);

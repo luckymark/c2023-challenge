@@ -7,6 +7,7 @@ extern int map[10][10];
 extern int sure_step;
 extern int level;
 extern int now_step;
+extern int step[5];
 
 void ClearConsole()
 {
@@ -66,7 +67,9 @@ void Print()
 
     }
 
-    min_ = Min_step(level);
+  //  min_ = Min_step(level);
+
+    min_ = sure_step < step[level - 1] ? sure_step : step[level - 1];
     printf("按'r'重新开始本关卡\n");
     printf("当前步数：%d\n",now_step);
     printf("%s",str);
