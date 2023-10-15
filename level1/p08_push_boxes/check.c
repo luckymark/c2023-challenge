@@ -26,11 +26,11 @@ int check_object(char (*maze)[100],int add_x,int add_y,struct box * all,struct b
 void key_choose(int key,int * x,int * y){
     switch(key){
         case 1:
-            *x=-1;
+            *x=-2;
             *y=0;
             break;
         case 2:
-            *x=1;
+            *x=2;
             *y=0;
             break;
         case 3:
