@@ -11,4 +11,5 @@ void Note()
     }
     fprintf(score,"%d %d %d %d %d\n",step[0],step[1],step[2],step[3],step[4]);
     fclose(score);
+
 }
