@@ -16,6 +16,6 @@ add_executable(p07_maze p07_maze/main.c p07_maze/game.h p07_maze/game.c)
 
 add_executable(p08_push_boxes p08_push_boxes/main.c p08_push_boxes/init_.c p08_push_boxes/push_boxes.h p08_push_boxes/check.c p08_push_boxes/calculate_score.c)
 
-add_executable(p09_linked_list p09_linked_list/main.c)
+add_executable(p09_linked_list p09_linked_list/main.c p09_linked_list/S_L_List.h p09_linked_list/S_L_List.c)
 
-add_executable(p10_warehouse p10_warehouse/main.c)
+add_executable(p10_warehouse p10_warehouse/main.c p10_warehouse/warehouse.h p10_warehouse/warehouse.c)
