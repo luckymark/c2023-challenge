@@ -3,6 +3,7 @@
 //
 #include<stdio.h>
 #include"push_boxes.h"
+#include<windows.h>
 extern int len;
 extern int logo[6];
 struct box init_maze(char (*maze)[100],int num,int * len_,struct box * object,struct box * boxes){
@@ -58,8 +59,12 @@ void print_maze(char (*maze)[100],int max_x,int max_y){
     for(int i=0;i<max_y;i++)
     {
         for(int j=0;j<max_x;j++)
-            printf("%2c",maze[i][j]);
+        {
+            printf("%c",maze[i][j]);
+            //fflush(stdout);
+        }
         printf("\n");
+        //fflush(stdout);
     }
 }
 int init_topic(void){
@@ -83,11 +88,11 @@ int init_topic(void){
 void init_player(struct box * player,int num){
     switch(num){
         case 1:
-            player->x=1;
+            player->x=2;
             player->y=1;
             break;
         case 2:
-            player->x=13;
+            player->x=26;
             player->y=12;
             break;
     }
