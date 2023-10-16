@@ -64,8 +64,7 @@ void WriteLine(){
     cout<<"输入货号:"<<endl;
     string id;
     cin>>id;
-    vector<Item>::iterator item;
-    if(isIDExist(id,item)){
+    if(vector<Item>::iterator item; isIDExist(id,item)){
         cout<<"This id has existed!"<<endl;
         cout<<ItemString(*item)<<endl;
         return;
@@ -86,8 +85,7 @@ void PopOut(){
     cout<<"输入货号:"<<endl;
     string id;
     cin>>id;
-    vector<Item>::iterator item;
-    if(isIDExist(id,item)) {
+    if(vector<Item>::iterator item;isIDExist(id,item)) {
         cout<<"已出库： "<<ItemString(*item)<<endl;
         DataList.erase(item);
     }
