@@ -1,6 +1,4 @@
-#include <conio.h>
-#include <stdio.h>
-#include <windows.h>
+
 #include "head_push_box.h"
 
 int extern map[10][10];

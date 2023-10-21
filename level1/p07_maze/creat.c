@@ -1,4 +1,3 @@
-#include <windows.h>
 #include "head_maze.h"
 
 extern int map[101][101];

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "head_push_box.h"
 extern int level;
 void Menu(){
     printf("使用wsad控制上下左右，esc退出，墙■,箱子✪,人⊙,目标☆,达成目标◇\n");

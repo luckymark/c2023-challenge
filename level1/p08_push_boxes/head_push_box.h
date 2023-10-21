@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <windows.h>
 
 void Map();//读取文件中地图
 void Print();//打印更改后的地图

@@ -1,6 +1,4 @@
 
-#include <time.h>
-#include <windows.h>
 #include "head_maze.h"
 
 

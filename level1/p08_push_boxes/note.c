@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "head_push_box.h"
 
 extern int step[5];
 void Note()

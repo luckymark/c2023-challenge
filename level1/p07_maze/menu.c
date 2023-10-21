@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "head_maze.h"
 
 extern int large;
 extern int level;

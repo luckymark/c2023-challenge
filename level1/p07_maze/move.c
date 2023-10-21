@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <conio.h>
-#include <windows.h>
+
 #include "head_maze.h"
 
 extern  int large;

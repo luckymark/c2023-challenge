@@ -1,5 +1,4 @@
-#include <windows.h>
-#include <stdio.h>
+#include "head_maze.h"
 
 extern char str[(102) * (102)];
 extern int large;

@@ -1,3 +1,7 @@
+#include <windows.h>
+#include <stdio.h>
+#include <time.h>
+#include <conio.h>
 
 void Menu();//菜单
 void Initialize(int num);//初始化地图
