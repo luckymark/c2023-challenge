@@ -18,13 +18,10 @@ add_executable(p07_maze p07_maze/main.c)
 add_executable(p08_push_boxes p08_push_boxes/main.c)
 
 add_executable(p09_linked_list p09_linked_list/main.c
-        p09_linked_list/link.h
         p09_linked_list/linked_list.c)
 
 add_executable(p10_warehouse p10_warehouse/main.c
         p10_warehouse/menu.c
-        p10_warehouse/manage_system.h
-        p10_warehouse/manage_system.c
         p10_warehouse/manage_system.c
         p10_warehouse/list.c
 )

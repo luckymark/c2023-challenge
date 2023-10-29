@@ -9,7 +9,7 @@
 int bs(int* arr, int len, int target){
     // 二分查找, 返回下标
     int left = 0;
-    int right = len;
+    int right = len - 1;
     while(1){
         int mid = (left + right)/2;
         if(target > arr[mid]){
