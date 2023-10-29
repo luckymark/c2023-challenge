@@ -17,9 +17,18 @@ public:
 };
 
 template<class T>
+class SearchItem{
+public:
+    int index;
+    Node<T> *last;
+    Node<T> * ptr;
+};
+
+template<class T>
 class NodeList {
 public:
     Node<T> *FirstNode = nullptr;
+    Node<T> *LastNode=nullptr;
     void PrintList(){
         Node<T>* now = FirstNode;
         while(now){
@@ -28,40 +37,60 @@ public:
         }
         cout<<endl;
     }
+    void Append(T value){
+        auto item=new Node<T>();
+        item->Value=value;
+        if(FirstNode== nullptr){
+            LastNode=FirstNode=item;
+        }else{
+            LastNode->NextNode=item;
+            LastNode=item;
+        }
+    }
+    void Insert(T value){
+        auto item=new Node<T>();
+        item->Value=value;
+        if(FirstNode== nullptr){
+            LastNode=FirstNode=item;
+        }else{
+            item->NextNode=FirstNode;
+            FirstNode=item;
+        }
+    }
+    void Delete(T value){
+        bool hasFound;
+        auto result= FindNode(value,hasFound);
+        while(hasFound){
+            SearchItem<T> item=result[0];
+            item.last->NextNode=item.ptr->NextNode;
+            delete item.ptr;
+            result= FindNode(value,hasFound);
+        }
+    }
     NodeList<T> Reverse(){
         NodeList<T> ReversedList;
-        ReversedList.FirstNode=new Node<T>();
-        ReversedList.FirstNode->Value=FirstNode->Value;
-
-        if(!FirstNode->NextNode)
-            return ReversedList;
-
-        Node<T>* now=FirstNode->NextNode;
+        auto now=FirstNode;
         while(now){
-            Node<T>* temp=ReversedList.FirstNode;
-            auto copyNext=new Node<T>();
-            copyNext->Value=now->Value;
-            copyNext->NextNode=temp;
-
-            ReversedList.FirstNode=copyNext;
+            ReversedList.Insert(now->Value);
             now=now->NextNode;
         }
         return ReversedList;
     }
-    std::vector<int> FindNode(T& item){
-        Node<T>* now=FirstNode;
-        vector<int> result;
+    vector<SearchItem<T>> FindNode(T& item,bool& hasFound){
+        Node<T> *now=FirstNode;
+        Node<T> *last;
+        vector<SearchItem<T>> result;
         int index=0;
-        bool hasFound=false;
+        hasFound=false;
         while (now){
             if(now->Value==item) {
-                result.push_back(index);
+                result.push_back(SearchItem<T>{index, last, now});
                 hasFound=true;
             }
+            last=now;
             now=now->NextNode;
             index++;
         }
-        if(!hasFound)result.push_back(-1);
         return result;
     }
 

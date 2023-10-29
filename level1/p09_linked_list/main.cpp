@@ -2,41 +2,37 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    auto* p=new Node<int>();
-    NodeList<int> t;
-    cout<<p->NextNode<<endl;
-    cout<<t.FirstNode<<endl;
-
-    NodeList<int> list;
-    Node<int>* now=list.FirstNode;
-    for(int i=1;i<=10;i++){
-        auto* node=new Node<int>();
-        node->Value=i;
-        if(!now)
-            list.FirstNode = node;
-        else now->NextNode=node;
-        now=node;
+template<class T>
+void SearchIndex(NodeList<T> list,T value){
+    bool ref;
+    vector<SearchItem<T>> result=list.FindNode(value,ref);
+    if(ref) {
+        cout << "Find " << value << " : ";
+        for (SearchItem<T> item: result) {
+            cout << " " << item.index;
+        }
+        cout << endl;
+    }else{
+        cout<<value<<" is not found."<<endl;
     }
+}
+
+int main(){
+    NodeList<int> list;
+
     for(int i=1;i<=10;i++){
-        auto* node =new Node<int>();
-        node->Value=i;
-        now->NextNode=node;
-        now=node;
+        list.Append(i);
+        list.Append(i);
     }
     list.PrintList();
+
     list=list.Reverse();
     list.PrintList();
 
-    int i=5;
-    vector result=list.FindNode(i);
-    for(int d:result)
-        cout<<d<<"\t";
-    cout<<endl;
-    i=0;
-    vector result1=list.FindNode(i);
-    for(int d:result1)
-        cout<<d<<"\t";
-    cout<<endl;
+    SearchIndex(list,5);
+    list.Delete(5);
+    SearchIndex(list,5);
+
+    list.PrintList();
     return 0;
 }
