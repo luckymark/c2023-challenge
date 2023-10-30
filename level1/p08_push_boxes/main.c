@@ -2,9 +2,18 @@
 #include<windows.h>
 #include"push_boxes.h"
 #include<time.h>
+#include<stdbool.h>
+bool flag=0;
+COORD coord = {0,0};//初始输出位置
+DWORD bytes = 0;
 int len=0;
 int logo[6]={0};
 int main() {
+    CONSOLE_CURSOR_INFO mice;
+    mice.dwSize=1;
+    mice.bVisible=FALSE;
+    HANDLE handle= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleCursorInfo(handle,&mice);//缩掉光标。
     int step_number=0;
     time_t start_time=0,end_time=0;
     char maze[100][100];
@@ -32,9 +41,22 @@ int main() {
     player.l_y=location.y;
     player.sign='@';
     print_maze(maze,location.x,location.y);
+    HANDLE hOutBuf = CreateConsoleScreenBuffer(
+            GENERIC_WRITE,
+            FILE_SHARE_WRITE,
+            NULL,
+            CONSOLE_TEXTMODE_BUFFER,
+            NULL
+    );
+    HANDLE hOutput = CreateConsoleScreenBuffer(
+            GENERIC_WRITE,
+            FILE_SHARE_WRITE,
+            NULL,
+            CONSOLE_TEXTMODE_BUFFER,
+            NULL
+    );
     start_time=clock();
     while(1){
-
         int key=key_check();
         if(key==-2) {
             FILE * fp;
@@ -63,9 +85,24 @@ int main() {
         else {
             step_number++;
             init_object(maze,object);
-            system("cls");
-            print_maze(maze,location.x,location.y);
-            Sleep(200);
+            //print_maze(maze,location.x,location.y);
+            flag=!flag;
+            if(flag)
+            {
+                coord.Y = 0;
+                for (int i = 0; i < location.y; i++,coord.Y++) {
+                    WriteConsoleOutputCharacter(hOutBuf, maze[i], location.x+1 , coord, &bytes);
+                    SetConsoleActiveScreenBuffer(hOutBuf);
+                }
+            }
+            else{
+                coord.Y = 0;
+                for (int i = 0; i < location.y; i++,coord.Y++){
+                    WriteConsoleOutputCharacter(hOutput, maze[i], location.x+1, coord, &bytes);
+                    SetConsoleActiveScreenBuffer(hOutput);
+                }
+            }
+            Sleep(300);
             if(move==2)
             {
                 end_time=clock();
@@ -83,6 +120,5 @@ int main() {
         }
     }
     end:
-    system("pause");
     return 0;
 }
