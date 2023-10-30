@@ -81,11 +81,14 @@ Node* insert(Node** before_node, int data){
 }
 
 void delete(Node** before_node){
+    Node* temp=(*before_node)->p;
     if ((*before_node)->p->p == NULL){
         (*before_node)->p=NULL;
+        free(temp);
     }
     else{
         (*before_node)->p=(*before_node)->p->p;
+        free(temp);
     }
 }
 
