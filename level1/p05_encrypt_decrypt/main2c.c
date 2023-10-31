@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-/*
- * 看完慕课椭圆加密算法再完成该题
- * */
 static const char b64[] = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
         'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
@@ -14,8 +11,8 @@ static const char b64[] = {
         'x','y', 'z', '0', '1', '2', '3', '4',
         '5', '6', '7', '8', '9', '+', '/'
 };
-
-static const unsigned char de_b64[256] = {
+// K L M N O P Q R A B C D E F G H I J k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + / S T U V W X Y Z a b c d e f g h i j
+static unsigned char de_b64[256] = {
         255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 253, 255,
         255, 253, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
         255, 255, 255, 255, 255, 255, 255, 255, 253, 255, 255, 255,
@@ -163,7 +160,11 @@ int en_de(){
         char str2[1024] = {};
         int len2 = 0;
         decode(s, (int) strlen(s), str2, &len2);
-        printf("res: %s\n", str2);
+        for(int i = 0; i < len2; i++){
+            printf("%d, ", str2[i] + 128);
+        }
+        printf("\n");
+        // printf("res: %s\n", str2);
     }else if(cmd == 3){
         return 0;
     }
@@ -194,6 +195,10 @@ int main() {
     // setbuf(stdout, NULL);
     // char s[] = "Man is distinguished, not only by his reason, but by this singular passion from other animals, which is a lust of the mind, that by a perseverance of delight in the continued and indefatigable generation of knowledge, exceeds the short vehemence of any carnal pleasure.";
     // char s[] = "help";
+    char s[] = "CDEFGHIJKLMNOPQRAB23456789+/STUVWXYZabcdefghijklmnopqrstuvwxyz01";
+    for(int i = 0; i < 64; i ++){
+        de_b64[s[i]] = i;
+    }
     while (en_de());
     return 0;
 }
