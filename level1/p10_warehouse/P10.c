@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
 
 //定义货物类型
 typedef struct {
@@ -44,7 +43,8 @@ int main(){
     default:
         printf("%s", "选择失败，请重试！\n");
     }
-
+    free(ware->ID);//释放分配的内存
+    free(ware);
 }
 
 

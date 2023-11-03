@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-void hanoi_step(int num, char A, char B, char C){
+void hanoi_step(int num, char A, char B, char C){//利用递归实现汉诺塔
     if (num == 1){
         printf("%c -> %c\n", A, C);
     }

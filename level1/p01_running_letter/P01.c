@@ -6,11 +6,11 @@
 
 void Running_letter(){
     int i, j, f, k;
-    for (i = 1; i <= 140; i ++) {
-        printf("%c", 'A');
-        usleep(5000);
-        system("cls");
-        for (j = 0; j < i; j ++){
+    for (i = 1; i <= 140; i ++) {  //从左向右移动字母
+        printf("%c", 'A');   //打印字母
+        usleep(5000);  //等待一段时间
+        system("cls");  //清屏
+        for (j = 0; j < i; j ++){  //在字母前打印空格，制造出移动的效果
             printf(" ");
         }
         j --;
