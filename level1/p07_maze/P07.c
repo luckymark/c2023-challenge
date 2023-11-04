@@ -27,11 +27,14 @@ void printMap();
 void initializeCharacter();
 void moveCharacter(short up, short down, short left, short right);
 COORD* getCursorPos();
+void hideCursor();
 bool isExit();
+bool judgeMapIsWall(COORD* coord);
 
 
 int main() {
     system("chcp 65001");
+    hideCursor();
     //打印迷宫地图
     printMap();
 
@@ -94,8 +97,8 @@ COORD* getCursorPos(){
 
 void initializeCharacter(){
     COORD *position=(COORD*)malloc(sizeof(COORD));
-    (*position).X = 1;
-    (*position).Y = 11;//定义一个COORD类型的变量，并将其位置定在迷宫入口处
+    (*position).X = 0;
+    (*position).Y = 12;//定义一个COORD类型的变量，并将其位置定在迷宫入口处
 
     HANDLE hOutput = GetStdHandle(STD_OUTPUT_HANDLE);//获取控制台的标准输出句柄
     SetConsoleCursorPosition(hOutput, *position);//将光标移动到position指定的位置
@@ -109,15 +112,25 @@ void moveCharacter(short up, short down, short left, short right){
 
     printf("\b\x20\b"); //打印空格清除掉原本的角色
     (*coord).X -= 1;
+    COORD* temp_coord=(COORD*)malloc(sizeof(COORD));
+    (*temp_coord).X=(*coord).X;
+    (*temp_coord).Y=(*coord).Y;
 
-    //根据输入修改coord的值
+    // 根据输入修改coord的值
     (*coord).X += right;
     (*coord).X -= left;
     (*coord).Y += up;
     (*coord).Y -= down;
 
-    SetConsoleCursorPosition(hOutput, *coord);//将光标移动到coord指定的位置
+
+    if (!judgeMapIsWall(coord)) {//如果移动方向上下一步并非墙壁，允许移动；如果是墙壁，保持人物原地不动
+        SetConsoleCursorPosition(hOutput, *coord);//将光标移动到coord指定的位置
+    } else{
+        SetConsoleCursorPosition(hOutput, *temp_coord);//将光标移动到coord指定的位置
+
+    }
     printf("%c", 'O');//在移动后的指定位置打印人物
+
 }
 
 
@@ -129,3 +142,21 @@ bool isExit(){
     else
         return false;
 }
+
+void hideCursor(){
+    CONSOLE_CURSOR_INFO cursor_info;
+    HANDLE hOutput=GetStdHandle(STD_OUTPUT_HANDLE);
+    GetConsoleCursorInfo(hOutput, &cursor_info);
+    cursor_info.bVisible=false;//设置光标为不可见
+    SetConsoleCursorInfo(hOutput, &cursor_info);//应用设置
+}
+
+bool judgeMapIsWall(COORD* coord){
+    char t=map[coord->Y-1][coord->X];
+    if (t == ' '){
+        return false;
+    } else{
+        return true;
+    }
+}
+
