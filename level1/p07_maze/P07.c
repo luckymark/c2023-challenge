@@ -44,10 +44,10 @@ int main() {
     //读取光标并移动角色
     move:
     switch (getch()) {
-        case 80://键盘输入的向上箭头ASCII码值为80
+        case 72://键盘输入的向上箭头ASCII码值为72
             moveCharacter(1, 0, 0, 0);
             break;
-        case 72://键盘输入的向下箭头ASCII码值为72
+        case 80://键盘输入的向下箭头ASCII码值为80
             moveCharacter(0, 1, 0, 0);
             break;
         case 75://键盘输入的向左箭头ASCII码值为75
@@ -119,8 +119,8 @@ void moveCharacter(short up, short down, short left, short right){
     // 根据输入修改coord的值
     (*coord).X += right;
     (*coord).X -= left;
-    (*coord).Y += up;
-    (*coord).Y -= down;
+    (*coord).Y -= up;
+    (*coord).Y += down;
 
 
     if (!judgeMapIsWall(coord)) {//如果移动方向上下一步并非墙壁，允许移动；如果是墙壁，保持人物原地不动
