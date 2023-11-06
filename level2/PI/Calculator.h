@@ -5,7 +5,7 @@
 #include <fstream>
 #include <thread>
 #include <chrono>
-#define PRECISE 50000
+#define PRECISE 100000
 
 using namespace boost::multiprecision;
 using namespace std;

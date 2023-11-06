@@ -15,6 +15,17 @@ void WriteToFile(const FLOAT data,const string filename){
     }
 }
 
+//用韦达定理求圆周率：
+void FrancoisViete(int from,int to,FLOAT& result){
+    FLOAT pi=1;
+    FLOAT a=1;
+    for(int i=0;i<PRECISE;i++){
+        a=sqrt(2+a);
+        pi*=2/a;
+    }
+    WriteToFile(pi*2,"FrancoisViete.txt");
+}
+
 void GregoryLeibniz_Pi(int from,int to,FLOAT& result){
     FLOAT res;
     for(int i=from;i<to;i++){
@@ -47,4 +58,6 @@ void Parallel_Calculator(int offset,int count,int n,void calculator(int,int,FLOA
         pi+=results[i];
     }
     WriteToFile(pi,filename);
+    delete[] threads;
+    delete[] results;
 }

@@ -23,6 +23,11 @@ add_executable(level0 level0/main.c)
 add_executable(level0_bs level0/bubbleSort/main.c)
 
 
-add_executable(wuziqi ClassDesign/main.cpp)
+add_executable(wuziqi
+        ClassDesign/main.cpp
+        ClassDesign/DataTypes.cpp
+        ClassDesign/DataTypes.h
+        ClassDesign/BoardDrawer.cpp
+        ClassDesign/BoardDrawer.h)
 find_package(raylib)
 target_link_libraries(wuziqi raylib)

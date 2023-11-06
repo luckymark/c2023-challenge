@@ -11,8 +11,9 @@ void Test(const int offset,const string& name,int count,int n,void calculator(in
 }
 
 int main(){
-    //50*8=400次迭代 5w小数耗时~3.5s
-    Test(3,"Nilakantha",50,8,Nilakantha_Pi);
+    //50*8=400次迭代 5w小数耗时~0.9s
+    //20*10=200次迭代 10w小数耗时 7s
+    Test(3,"Nilakantha",20,20,Nilakantha_Pi);
     //烧CPU的垃圾方法
     //CPU 占用率68% 5w小数精度 耗时未知 本子烧坏了都算不出来..
     //Test(4,"Gregory Leibniz",1000,10,GregoryLeibniz_Pi);
