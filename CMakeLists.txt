@@ -31,3 +31,7 @@ add_executable(wuziqi
         ClassDesign/BoardDrawer.h)
 find_package(raylib)
 target_link_libraries(wuziqi raylib)
+add_executable(NeuralNetworks level2/NeuralNetworks/main.cpp
+        level2/NeuralNetworks/Network.cpp
+        level2/NeuralNetworks/Network.h)
+target_link_libraries(NeuralNetworks raylib)

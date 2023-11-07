@@ -3,12 +3,14 @@
 //
 #include "BoardDrawer.h"
 
+//defined at BoardDrawer.h
 const float Board_Size=840;
 const float Margin =20.0f;
 const int LineThick=2;
 const int PieceSize =20;
 const int GridSize =  60;
 
+//defined at DataTypes.h
 PieceStatus MapData[15][15]={PieceStatus::None};
 PieceStatus CurrentPlayer=PieceStatus::Black;
 
