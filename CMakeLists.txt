@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_STATIC_RUNTIME ON)
-set(Boost_INCLUDE_DIR ${_VCPKG_INSTALLED_DIR}/x64-windows-static/include)
+#我的环境变量咋访问不了了？
+set(Boost_INCLUDE_DIR C:/Users/cz241/Documents/GitHub/vcpkg/installed/x64-windows-static/include)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 find_package(Boost COMPONENTS system REQUIRED)
 if (Boost_FOUND)
@@ -25,10 +26,12 @@ add_executable(level0_bs level0/bubbleSort/main.c)
 
 add_executable(wuziqi
         ClassDesign/main.cpp
-        ClassDesign/DataTypes.cpp
-        ClassDesign/DataTypes.h
+        ClassDesign/Player/RandomRobot.cpp
+        ClassDesign/DataType.h
         ClassDesign/BoardDrawer.cpp
-        ClassDesign/BoardDrawer.h)
+        ClassDesign/BoardDrawer.h
+        ClassDesign/Player/IPlayer.h
+        ClassDesign/Player/HumanPlayer.cpp)
 find_package(raylib)
 target_link_libraries(wuziqi raylib)
 add_executable(NeuralNetworks level2/NeuralNetworks/main.cpp

@@ -4,33 +4,20 @@
 
 #include "BoardDrawer.h"
 
-void BoardDrawer::OnWined(PieceStatus winner) {
-    if(winner!=PieceStatus::None){
-        string str= "Winner: ";
-        str.append(winner==PieceStatus::Black?"Black":"White");
-        DrawText(str.c_str(),20,Board_Size+60,20,BLACK);
+void BoardDrawer::Round(){
+    Point p;
+    if(CurrentPlayer==PieceStatus::Black){
+        p=Player_Black->NextStep();
+    }else{
+        p=Player_White->NextStep();
     }
+    if(p.x==-1&&p.y==-1)return;
+    MapData[p.x][p.y]=CurrentPlayer;
+    ExchangePlayer();
 }
 
-void BoardDrawer::MouseEvent() {
-    Vector2 mousePos=GetMousePosition();
-    int x=(mousePos.x)/GridSize;
-    int y=(mousePos.y)/GridSize;
-    DrawCircle(20+x*GridSize,20+y*GridSize,PieceSize,CurrentPlayer==PieceStatus::Black?BLACK:WHITE);
-    //绘制当前玩家：
-    string current= "CurrentPlayer: ";
-    current.append(CurrentPlayer==PieceStatus::Black?"Black":"White");
-    DrawText(current.c_str(),20,Board_Size+40,20,BLACK);
-    //响应鼠标点击：
-    if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON)){
-        if(x>=0&&x<15&&y>=0&&y<15) {
-            if (MapData[x][y] == PieceStatus::None) {
-                MapData[x][y] = CurrentPlayer;
-                CurrentPlayer = CurrentPlayer == PieceStatus::Black ? PieceStatus::White : PieceStatus::Black;
-            }
-        }
-    }
-
+void BoardDrawer::ExchangePlayer() {
+    CurrentPlayer = CurrentPlayer == PieceStatus::Black ? PieceStatus::White : PieceStatus::Black;
 }
 
 void BoardDrawer::DrawBackground() {
@@ -53,7 +40,7 @@ void BoardDrawer::DrawPieces(){
     }
 }
 
-PieceStatus  BoardDrawer::Win(){
+void  BoardDrawer::IfWined(){
     Color LineColor=BLUE;
     Vector2 p_start,p_end;
     PieceStatus IfWin=PieceStatus::None;
@@ -95,5 +82,9 @@ PieceStatus  BoardDrawer::Win(){
     if(IfWin!=PieceStatus::None){
         DrawLineEx(p_start, p_end, LineThick, LineColor);
     }
-    return IfWin;
+    if(IfWin!=PieceStatus::None){
+        string str= "Winner: ";
+        str.append(IfWin==PieceStatus::Black?"Black":"White");
+        DrawText(str.c_str(),20,Board_Size+60,20,BLACK);
+    }
 }
