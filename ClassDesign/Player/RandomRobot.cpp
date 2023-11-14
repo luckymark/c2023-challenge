@@ -1,7 +1,7 @@
 //
 // Created by cz241 on 11/3/2023.
 //
-//负责AI计算下一步棋怎么走
+//
 #include "IPlayer.h"
 
 Point RandomRobot::NextStep() {

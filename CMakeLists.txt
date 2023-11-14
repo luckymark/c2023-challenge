@@ -31,7 +31,9 @@ add_executable(wuziqi
         ClassDesign/BoardDrawer.cpp
         ClassDesign/BoardDrawer.h
         ClassDesign/Player/IPlayer.h
-        ClassDesign/Player/HumanPlayer.cpp)
+        ClassDesign/Player/HumanPlayer.cpp
+        ClassDesign/Player/ChessTreeRobot.cpp
+        ClassDesign/Player/ChessTreeRobot.h)
 find_package(raylib)
 target_link_libraries(wuziqi raylib)
 add_executable(NeuralNetworks level2/NeuralNetworks/main.cpp

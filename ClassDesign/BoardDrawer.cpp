@@ -6,10 +6,10 @@
 
 void BoardDrawer::Round(){
     Point p;
-    if(CurrentPlayer==PieceStatus::Black){
-        p=Player_Black->NextStep();
+    if(Players[0]->PlayerColor==CurrentPlayer) {
+        p = Players[0]->NextStep();
     }else{
-        p=Player_White->NextStep();
+        p = Players[1]->NextStep();
     }
     if(p.x==-1&&p.y==-1)return;
     MapData[p.x][p.y]=CurrentPlayer;

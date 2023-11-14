@@ -19,20 +19,18 @@ extern PieceStatus CurrentPlayer;
 
 struct Point{
     int x,y;
-};
-//博弈树的节点
-class ChessNode{
-public:
-    Point lastPoint;
-    int score;
-    int depth;
-    ChessNode* last;
-    ChessNode* next;
-    ChessMap map;
-};
-
-class ChessTree{
-
+    bool operator ==(const Point& p) const{
+        return MapData[x][y]==MapData[p.x][p.y];
+    }
+    bool operator ==(const PieceStatus status) const{
+        return MapData[x][y]==status;
+    }
+    bool operator !=(const Point& p) const{
+        return MapData[x][y]!=MapData[p.x][p.y];
+    }
+    bool operator !=(const PieceStatus status) const{
+        return MapData[x][y]!=status;
+    }
 };
 
 #endif //C2023_CHALLENGE_DATATYPE_H

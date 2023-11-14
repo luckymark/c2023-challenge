@@ -13,8 +13,7 @@ extern const float Margin;
 extern const int LineThick;
 extern const int PieceSize;
 extern const int GridSize;
-extern IPlayer* Player_Black;
-extern IPlayer* Player_White;
+extern IPlayer* Players[2];
 
 //负责绘制棋盘和棋子
 class BoardDrawer {

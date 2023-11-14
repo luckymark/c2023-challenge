@@ -15,14 +15,18 @@ ChessMap MapData={PieceStatus::None};
 //黑子先手
 PieceStatus CurrentPlayer=PieceStatus::Black;
 //玩家列表
-IPlayer *Player_Black,*Player_White;
+IPlayer* Players[2];
 
 int main(){
     InitWindow(Board_Size+60,Board_Size+90,"我不会写五子棋");
     SetConfigFlags(FLAG_MSAA_4X_HINT);
     //加载玩家：
-    Player_Black=new HumanPlayer();
-    Player_White=new RandomRobot();
+    auto human=new HumanPlayer();
+    human->PlayerColor=PieceStatus::Black;
+    Players[0]=human;
+    auto robot=new ChessTreeRobot();
+    robot->PlayerColor=PieceStatus::White;
+    Players[1]=robot;
 
     while(!WindowShouldClose()){
         BeginDrawing();

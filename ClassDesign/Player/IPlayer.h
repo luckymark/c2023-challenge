@@ -6,6 +6,7 @@
 class IPlayer
 {
 public:
+    PieceStatus PlayerColor;
     virtual Point NextStep() = 0;
 };
 
@@ -17,6 +18,11 @@ public:
 class HumanPlayer : public IPlayer
 {
 public:
+    Point NextStep() override;
+};
+class ChessTreeRobot : public IPlayer
+{
+    public:
     Point NextStep() override;
 };
 #endif
