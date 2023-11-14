@@ -39,7 +39,14 @@ add_executable(p09_linked_list p09_linked_list/main.c
         p09_linked_list/list.c
         p09_linked_list/list.h)
 
-add_executable(p10_warehouse p10_warehouse/main.c)
+add_executable(p10_warehouse p10_warehouse/main.c
+        p10_warehouse/warehouse.h
+        p10_warehouse/show_goods_list.c
+        p10_warehouse/add_goods.c
+        p10_warehouse/remove_goods.c
+        p10_warehouse/save_goods_list.c
+        p10_warehouse/load_goods_list.c
+        p10_warehouse/menu.c)
 
 add_executable(temp temp/main.c
 )
