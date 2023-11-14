@@ -2,6 +2,7 @@
 
 extern Goods goods[MAX_GOODS_NUM];
 extern int goods_num;
+
 // 3.出库
 void remove_goods()
 {
