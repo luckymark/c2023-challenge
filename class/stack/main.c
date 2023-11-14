@@ -8,7 +8,6 @@
 //    struct Node *next;//定义后继指针域
 //}Node;
 //
-
 //
 //
 //Node *initStack()
