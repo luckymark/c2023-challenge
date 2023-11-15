@@ -1,5 +1,7 @@
 #include <stdio.h>
-//一次移动
+
+
+//输出一次移动的过程
 void move(char A, char B)
 {
 	printf("%c -> %c\n", A, B);
