@@ -3,6 +3,7 @@
 //
 
 #include "BoardDrawer.h"
+#include <iostream>
 
 void BoardDrawer::Round(){
     Point p;
@@ -12,6 +13,7 @@ void BoardDrawer::Round(){
         p = Players[1]->NextStep();
     }
     if(p.x==-1&&p.y==-1)return;
+    cout<<"POINT AT: "<<p.x<<" "<<p.y<<endl;
     MapData[p.x][p.y]=CurrentPlayer;
     ExchangePlayer();
 }

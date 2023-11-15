@@ -1,6 +1,7 @@
 #include "ChessTreeRobot.h"
 #include "IPlayer.h"
 #include <vector>
+#include <iostream>
 using namespace std;
 /*
  * Design:
@@ -16,7 +17,28 @@ Point ChessTreeRobot::NextStep() {
     //搜索博弈树，预算分数
     //返回最高分数的点
     if(list.empty()){
+        cout<<"RANDOM  "<<list.size()<<endl;
         return (new RandomRobot())->NextStep();
+    }
+    //调试信息
+    for(auto model:list){
+        cout<<"Model: "<<(int)model.type<<endl;
+        cout<<"Points: "<<endl;
+        for(auto point:model.points){
+            cout<<"("<<point.x<<","<<point.y<<")"<<endl;
+        }
+        cout<<"Ava: "<<endl;
+        for(auto point:model.ava){
+            cout<<"("<<point.x<<","<<point.y<<")"<<endl;
+        }
+    }
+    //优先级：活四>眠四>活三>眠三>活二>眠二
+    if(list[0].type==ModelType::H4){
+        cout<<"H4"<<endl;
+        return list[0].ava[0];
+    }else if(list[1].type==ModelType::H4) {
+        cout << "H4" << endl;
+        return list[1].ava[0];
     }
     return list[0].ava[0];
 }
@@ -25,9 +47,13 @@ static vector<ChessModel> CheckModel(){
     vector<ChessModel> result;
     for(int x=0;x<15;x++) {
         for (int y = 0; y < 15; y++) {
-            ChessModel model;
-            model.type=ModelType::H4;
+            ChessModel H4Model;
+            H4Model.type=ModelType::H4;
             vector<Point> ava,points;
+
+            ChessModel H3Model;
+            H3Model.type=ModelType::H3;
+            vector<Point> avaH3,pointsH3;
             auto CheckH4=[&](Point p1,Point p2,Point p3,Point p4,Point p5){
                 //匹配活四和冲四
                 //活四：若为己方则必胜
@@ -38,28 +64,20 @@ static vector<ChessModel> CheckModel(){
                 if(p1==PieceStatus::None&&p2==PieceStatus::None&&p3==PieceStatus::None&&p4==PieceStatus::None&&p5==PieceStatus::None){
                     return;
                 }
-                //匹配两种活四类型
+                //匹配活四类型
                 //11110
-                if(p1==p2&&p1==p3&&p1==p4&&p5==PieceStatus::None){
+                if(p1!=PieceStatus::None&&p1==p2&&p1==p3&&p1==p4&&p5==PieceStatus::None){
                     ava.push_back(p5);
-                }
-                //01111
-                if(p2==p3&&p2==p4&&p2==p5&&p1==PieceStatus::None){
-                    ava.push_back(p1);
                 }
 
                 //匹配四种冲四类型
                 //11101
-                if(p1==p2&&p1==p3&&p1==p5&&p4==PieceStatus::None){
+                if(p1!=PieceStatus::None&&p1==p2&&p1==p3&&p1==p5&&p4==PieceStatus::None){
                     ava.push_back(p4);
                 }
                 //11011
-                if(p1==p2&&p1==p4&&p1==p5&&p3==PieceStatus::None){
+                if(p1!=PieceStatus::None&&p1==p2&&p1==p4&&p1==p5&&p3==PieceStatus::None){
                     ava.push_back(p3);
-                }
-                //10111
-                if(p1==p3&&p1==p4&&p1==p5&&p2==PieceStatus::None){
-                    ava.push_back(p2);
                 }
 
                 if(!ava.empty()){
@@ -77,66 +95,79 @@ static vector<ChessModel> CheckModel(){
                     return;
                 }
                 //匹配两种活三类型
-                //11100
-                if(p1==p2&&p1==p3&&p4==PieceStatus::None&&p5==PieceStatus::None){
-                    ava.push_back(p4);
-                    ava.push_back(p5);
+                //01110
+                if(p2!=PieceStatus::None&&p2==p3&&p2==p4&&p1==PieceStatus::None&&p5==PieceStatus::None){
+                    avaH3.push_back(p1);
+                    avaH3.push_back(p5);
                 }
-                //10110
-                if(p1==p3&&p1==p4&&p2==PieceStatus::None&&p5==PieceStatus::None){
-                    ava.push_back(p2);
-                    ava.push_back(p5);
+                //1011
+                if(p1!=PieceStatus::None&&p1==p3&&p1==p4&&p2==PieceStatus::None){
+                    avaH3.push_back(p2);
                 }
 
                 //匹配眠三类型
                 //01011
-                if(p2==p4&&p2==p5&&p1==PieceStatus::None&&p3==PieceStatus::None){
-                    ava.push_back(p1);
-                    ava.push_back(p3);
+                if(p2!=PieceStatus::None&&p2==p4&&p2==p5&&p1==PieceStatus::None&&p3==PieceStatus::None){
+                    avaH3.push_back(p3);
+                    avaH3.push_back(p1);
                 }
                 //10011
-                if(p1==p4&&p1==p5&&p2==PieceStatus::None&&p3==PieceStatus::None){
-                    ava.push_back(p2);
-                    ava.push_back(p3);
+                if(p1!=PieceStatus::None&&p1==p4&&p1==p5&&p2==PieceStatus::None&&p3==PieceStatus::None){
+                    avaH3.push_back(p3);
+                    avaH3.push_back(p2);
                 }
                 //10101
-                if(p1==p3&&p1==p5&&p2==PieceStatus::None&&p4==PieceStatus::None){
-                    ava.push_back(p2);
-                    ava.push_back(p4);
+                if(p1!=PieceStatus::None&&p1==p3&&p1==p5&&p2==PieceStatus::None&&p4==PieceStatus::None){
+                    avaH3.push_back(p2);
+                    avaH3.push_back(p4);
                 }
 
-                if(!ava.empty()){
-                    points.push_back(p1);
-                    points.push_back(p2);
-                    points.push_back(p3);
-                    points.push_back(p4);
-                    points.push_back(p5);
+                if(!avaH3.empty()){
+                    pointsH3.push_back(p1);
+                    pointsH3.push_back(p2);
+                    pointsH3.push_back(p3);
+                    pointsH3.push_back(p4);
+                    pointsH3.push_back(p5);
                 }
             };
             auto CheckAll=[&](Point p1,Point p2,Point p3,Point p4,Point p5){
-                CheckH3(p1,p2,p3,p4,p5);
-                CheckH3(p5,p4,p3,p2,p1);
                 CheckH4(p1,p2,p3,p4,p5);
                 CheckH4(p5,p4,p3,p2,p1);
+                CheckH3(p1,p2,p3,p4,p5);
+                CheckH3(p5,p4,p3,p2,p1);
             };
-            //取横向五个点：
-            Point l1={x,y},l2={x,y+1},l3={x,y+2},l4={x,y+3},l5={x,y+4};
-            CheckAll(l1,l2,l3,l4,l5);
-            //取纵向五个点：
-            Point u1={x,y},u2={x+1,y},u3={x+2,y},u4={x+3,y},u5={x+4,y};
-            CheckAll(u1,u2,u3,u4,u5);
-            //取左上到右下五个点：
-            Point lu1={x,y},lu2={x+1,y+1},lu3={x+2,y+2},lu4={x+3,y+3},lu5={x+4,y+4};
-            CheckAll(lu1,lu2,lu3,lu4,lu5);
-            //取右上到左下五个点：
-            Point ru1={x,y},ru2={x-1,y+1},ru3={x-2,y+2},ru4={x-3,y+3},ru5={x-4,y+4};
-            CheckAll(ru1,ru2,ru3,ru4,ru5);
+            if(y<=10) {
+                //取横向五个点：
+                Point l1 = {x, y}, l2 = {x, y + 1}, l3 = {x, y + 2}, l4 = {x, y + 3}, l5 = {x, y + 4};
+                CheckAll(l1, l2, l3, l4, l5);
+            }
+            if(x<=10) {
+                //取纵向五个点：
+                Point u1 = {x, y}, u2 = {x + 1, y}, u3 = {x + 2, y}, u4 = {x + 3, y}, u5 = {x + 4, y};
+                CheckAll(u1, u2, u3, u4, u5);
+            }
+            if(x<=10&&y<=10) {
+                //取左上到右下五个点：
+                Point lu1 = {x, y}, lu2 = {x + 1, y + 1}, lu3 = {x + 2, y + 2}, lu4 = {x + 3, y + 3}, lu5 = {x + 4,y + 4};
+                CheckAll(lu1, lu2, lu3, lu4, lu5);
+            }
+            if(x>=4&&y<=10) {
+                //取右上到左下五个点：
+                Point ru1 = {x, y}, ru2 = {x - 1, y + 1}, ru3 = {x - 2, y + 2}, ru4 = {x - 3, y + 3}, ru5 = {x - 4,y + 4};
+                CheckAll(ru1, ru2, ru3, ru4, ru5);
+            }
 
             if(!ava.empty()) {
-                model.ava=ava;
-                model.points=points;
-                result.push_back(model);
+                H4Model.ava=ava;
+                H4Model.points=points;
+                result.push_back(H4Model);
             }
+            if(!avaH3.empty()) {
+                H3Model.ava=avaH3;
+                H3Model.points=pointsH3;
+                result.push_back(H3Model);
+            }
+
         }
     }
     return result;
