@@ -15,7 +15,7 @@ add_executable(p06_hanoi p06_hanoi/main.c)
 
 add_executable(p07_maze p07_maze/main.c
         p07_maze/head_maze.h
-        p07_maze/creat.c
+        p07_maze/create.c
         p07_maze/initialize.c
         p07_maze/menu.c
         p07_maze/have_neighbor.c

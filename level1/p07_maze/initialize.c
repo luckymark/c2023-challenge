@@ -30,7 +30,7 @@ void Initialize(int num){
     //开始创建地图
     if(level == 1)
     {
-        Creat_01(1,1);
+		Create_01(1, 1);
     }
     //把随机的路径初始化为1
     for (i = 0; i < large; i++)

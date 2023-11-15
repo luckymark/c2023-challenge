@@ -41,7 +41,7 @@ int Move(){
         {
             Print();
         }
-            //返回为2则成
+		//返回为2则挑战成功
         else if(2 == flag)
         {
             printf("挑战成功！\n");
