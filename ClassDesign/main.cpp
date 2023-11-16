@@ -29,8 +29,6 @@ int main(){
     Players[1]=robot;
     //是否有人胜出：
     bool wined=false;
-    //计步器
-    int step=0;
 
     while(!WindowShouldClose()){
         BeginDrawing();
@@ -42,7 +40,6 @@ int main(){
         //进行一轮博弈
         if(!wined) {
             BoardDrawer::Round();
-            step++;
         }
         //判断有无胜出
         bool drew=false;
@@ -50,11 +47,12 @@ int main(){
         if(winner!=PieceStatus::None || drew){
             wined=true;
             string win=drew?"No one":(winner==PieceStatus::Black?"Black":"White");
-            win.append(" Wined in "+to_string(step)+" steps!");
+            win.append(" Wined in "+to_string(BoardDrawer::GetSteps())+" steps!");
             DrawText(win.c_str(),20,Board_Size+40,20,BLACK);
             DrawText("Press ENTER to restart",20,Board_Size+60,20,BLACK);
             if(IsKeyPressed(KEY_ENTER)){
                 wined=false;
+                BoardDrawer::ResetStep();
                 //重新开始：
                 for(auto & x : MapData){
                     for(auto & y : x){

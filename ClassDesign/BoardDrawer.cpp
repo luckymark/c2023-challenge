@@ -6,6 +6,13 @@
 #include <iostream>
 #include <thread>
 
+int TotalSteps=0;
+int BoardDrawer::GetSteps() {
+    return TotalSteps;
+}
+void BoardDrawer::ResetStep(){
+    TotalSteps=0;
+}
 void BoardDrawer::Round(int sleepTime){
     //绘制当前玩家：
     string current= "CurrentPlayer: ";
@@ -21,6 +28,7 @@ void BoardDrawer::Round(int sleepTime){
     cout<<"POINT AT: "<<p.x<<" "<<p.y<<endl;
     MapData[p.x][p.y]=CurrentPlayer;
     ExchangePlayer();
+    TotalSteps++;
     if(sleepTime!=0)this_thread::sleep_for(chrono::milliseconds(sleepTime));
 }
 
