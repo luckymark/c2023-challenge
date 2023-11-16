@@ -7,7 +7,7 @@ extern int large;
 void Create_01(int x, int y)
 {
 	//记录上一次的位置
-	int old_x = x, old_y = y;
+	int prev_x = x, prev_y = y;
 	//记录随机的方向
 	int rand_direction = 0;
 	while (1)
@@ -17,8 +17,8 @@ void Create_01(int x, int y)
 		{
 			while (1)
 			{
-				old_x = x;
-				old_y = y;
+				prev_x = x;
+				prev_y = y;
 				map[x][y] = 5;
 				rand_direction = rand() % 4;
 				if (0 == rand_direction && map[x - 2][y] == 1 && x >= 3)
@@ -37,7 +37,7 @@ void Create_01(int x, int y)
 				{
 					y += 2;
 				}
-				map[(x + old_x) / 2][(y + old_y) / 2] = 5;
+				map[(x + prev_x) / 2][(y + prev_y) / 2] = 5;
 				map[x][y] = 5;
 				Create_01(x, y);
 				break;
