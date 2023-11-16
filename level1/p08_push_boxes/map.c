@@ -1,120 +1,177 @@
 
 #include "head_push_box.h"
 
-extern int level;
 extern int map[10][10];
-int extern goal1_x,goal1_y,goal2_x,goal2_y,goal3_x,goal3_y,goal4_x,goal4_y,goal5_x,goal5_y;
-void Map(){
-    int maps[5][10][10];
-    //打开5个文件并读取地图
-    FILE *maps1 = fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map1.txt","r");
-    if(maps1 == NULL)
-    {
-        perror("open failed:");
-        return;
-    }
-    FILE *maps2 = fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map2.txt","r");
-    if(maps1 == NULL)
-    {
-        perror("open failed:");
-        return;
-    }
-    FILE *maps3 = fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map3.txt","r");
-    if(maps1 == NULL)
-    {
-        perror("open failed:");
-        return;
-    }
-    FILE *maps4 = fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map4.txt","r");
-    if(maps1 == NULL)
-    {
-        perror("open failed:");
-        return;
-    }
-    FILE *maps5 = fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map5.txt","r");
-    if(maps1 == NULL)
-    {
-        perror("open failed:");
-        return;
-    }
-
-    for(int i = 0;i < 10;i++)
-    {
-        fscanf(maps1,"%d %d %d %d %d %d %d %d %d %d",&maps[0][i][0],&maps[0][i][1],&maps[0][i][2],&maps[0][i][3],&maps[0][i][4],&maps[0][i][5],&maps[0][i][6],&maps[0][i][7],&maps[0][i][8],&maps[0][i][9]);
-        fscanf(maps2,"%d %d %d %d %d %d %d %d %d %d",&maps[1][i][0],&maps[1][i][1],&maps[1][i][2],&maps[1][i][3],&maps[1][i][4],&maps[1][i][5],&maps[1][i][6],&maps[1][i][7],&maps[1][i][8],&maps[1][i][9]);
-        fscanf(maps3,"%d %d %d %d %d %d %d %d %d %d",&maps[2][i][0],&maps[2][i][1],&maps[2][i][2],&maps[2][i][3],&maps[2][i][4],&maps[2][i][5],&maps[2][i][6],&maps[2][i][7],&maps[2][i][8],&maps[2][i][9]);
-        fscanf(maps4,"%d %d %d %d %d %d %d %d %d %d",&maps[3][i][0],&maps[3][i][1],&maps[3][i][2],&maps[3][i][3],&maps[3][i][4],&maps[3][i][5],&maps[3][i][6],&maps[3][i][7],&maps[3][i][8],&maps[3][i][9]);
-        fscanf(maps5,"%d %d %d %d %d %d %d %d %d %d",&maps[4][i][0],&maps[4][i][1],&maps[4][i][2],&maps[4][i][3],&maps[4][i][4],&maps[4][i][5],&maps[4][i][6],&maps[4][i][7],&maps[4][i][8],&maps[4][i][9]);
-    }
-    fclose(maps1);
-    fclose(maps2);
-    fclose(maps3);
-    fclose(maps4);
-    fclose(maps5);
-
-    //记录各个关卡目标点位置
-    for(int i = 0;i < 10;i++)
-    {
-        for(int j = 0;j < 10;j++)
-        {
-            if(1 == level)
-            {
-                map[i][j] = maps[0][i][j];
-                goal1_x = 2;
-                goal1_y = 4;
-                goal2_x = 4;
-                goal2_y = 7;
-                goal3_x = 5;
-                goal3_y = 2;
-                goal4_x = 7;
-                goal4_y = 5;
-            }
-            else if(2 == level)
-            {
-                map[i][j] = maps[1][i][j];
-                goal1_x = 4;
-                goal1_y = 7;
-                goal2_x = 5;
-                goal2_y = 7;
-                goal3_x = 6;
-                goal3_y = 7;
-            }
-            else if(3 == level)
-            {
-                map[i][j] = maps[2][i][j];
-                goal1_x = 4;
-                goal1_y = 2;
-                goal2_x = 4;
-                goal2_y = 3;
-                goal3_x = 5;
-                goal3_y = 2;
-                goal4_x = 5;
-                goal4_y = 3;
-            }
-            else if(4 == level)
-            {
-                map[i][j] = maps[3][i][j];
-                goal1_x = 5;
-                goal1_y = 1;
-                goal2_x = 6;
-                goal2_y = 1;
-                goal3_x = 6;
-                goal3_y = 2;
-                goal4_x = 6;
-                goal4_y = 3;
-                goal5_x = 6;
-                goal5_y = 4;
-            }
-            else if(5 == level)
-            {
-                map[i][j] = maps[4][i][j];
-                goal1_x = 4;
-                goal1_y = 1;
-                goal2_x = 5;
-                goal2_y = 1;
-                goal3_x = 6;
-                goal3_y = 1;
-            }
-        }
-    }
+extern Goal goal[5];
+//根据关卡数读取地图
+void Map(int level)
+{
+	if (level == 1)
+	{
+		FILE* maps1 =
+			fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map1.txt", "r");
+		if (maps1 == NULL)
+		{
+			perror("open failed:");
+			return;
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			fscanf(maps1,
+				"%d %d %d %d %d %d %d %d %d %d",
+				&map[i][0],
+				&map[i][1],
+				&map[i][2],
+				&map[i][3],
+				&map[i][4],
+				&map[i][5],
+				&map[i][6],
+				&map[i][7],
+				&map[i][8],
+				&map[i][9]);
+		}
+		fclose(maps1);
+		goal[0].x = 2;
+		goal[0].y = 4;
+		goal[1].x = 4;
+		goal[1].y = 7;
+		goal[2].x = 5;
+		goal[2].y = 2;
+		goal[3].x = 7;
+		goal[3].y = 5;
+	}
+	else if (level == 2)
+	{
+		FILE* maps2 =
+			fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map2.txt", "r");
+		if (maps2 == NULL)
+		{
+			perror("open failed:");
+			return;
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			fscanf(maps2,
+				"%d %d %d %d %d %d %d %d %d %d",
+				&map[i][0],
+				&map[i][1],
+				&map[i][2],
+				&map[i][3],
+				&map[i][4],
+				&map[i][5],
+				&map[i][6],
+				&map[i][7],
+				&map[i][8],
+				&map[i][9]);
+		}
+		fclose(maps2);
+		goal[0].x = 4;
+		goal[0].y = 7;
+		goal[1].x = 5;
+		goal[1].y = 7;
+		goal[2].x = 6;
+		goal[2].y = 7;
+	}
+	else if (level == 3)
+	{
+		FILE* maps3 =
+			fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map3.txt", "r");
+		if (maps3 == NULL)
+		{
+			perror("open failed:");
+			return;
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			fscanf(maps3,
+				"%d %d %d %d %d %d %d %d %d %d",
+				&map[i][0],
+				&map[i][1],
+				&map[i][2],
+				&map[i][3],
+				&map[i][4],
+				&map[i][5],
+				&map[i][6],
+				&map[i][7],
+				&map[i][8],
+				&map[i][9]);
+		}
+		fclose(maps3);
+		goal[0].x = 4;
+		goal[0].y = 2;
+		goal[1].x = 4;
+		goal[1].y = 3;
+		goal[2].x = 5;
+		goal[2].y = 2;
+		goal[3].x = 5;
+		goal[3].y = 3;
+	}
+	else if (level == 4)
+	{
+		FILE* maps4 =
+			fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map4.txt", "r");
+		if (maps4 == NULL)
+		{
+			perror("open failed:");
+			return;
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			fscanf(maps4,
+				"%d %d %d %d %d %d %d %d %d %d",
+				&map[i][0],
+				&map[i][1],
+				&map[i][2],
+				&map[i][3],
+				&map[i][4],
+				&map[i][5],
+				&map[i][6],
+				&map[i][7],
+				&map[i][8],
+				&map[i][9]);
+		}
+		fclose(maps4);
+		goal[0].x = 5;
+		goal[0].y = 1;
+		goal[1].x = 6;
+		goal[1].y = 1;
+		goal[2].x = 6;
+		goal[2].y = 2;
+		goal[3].x = 6;
+		goal[3].y = 3;
+		goal[4].x = 6;
+		goal[4].y = 4;
+	}
+	else if (level == 5)
+	{
+		FILE* maps5 =
+			fopen("C:\\Users\\81201\\CLionProjects\\c2023-challenge\\level1\\p08_push_boxes\\map\\map5.txt", "r");
+		if (maps5 == NULL)
+		{
+			perror("open failed:");
+			return;
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			fscanf(maps5,
+				"%d %d %d %d %d %d %d %d %d %d",
+				&map[i][0],
+				&map[i][1],
+				&map[i][2],
+				&map[i][3],
+				&map[i][4],
+				&map[i][5],
+				&map[i][6],
+				&map[i][7],
+				&map[i][8],
+				&map[i][9]);
+		}
+		fclose(maps5);
+		goal[0].x = 4;
+		goal[0].y = 1;
+		goal[1].x = 5;
+		goal[1].y = 1;
+		goal[2].x = 6;
+		goal[2].y = 1;
+	}
 }

@@ -1,5 +1,5 @@
 #include "head_push_box.h"
-extern int step[5];
+extern int min_step[5];
 
 void Read()
 {
@@ -8,6 +8,6 @@ void Read()
     {
         perror("open failed:");
     }
-    fscanf_s(score,"%d %d %d %d %d\n",&step[0],&step[1],&step[2],&step[3],&step[4]);
+    fscanf_s(score,"%d %d %d %d %d\n",&min_step[0],&min_step[1],&min_step[2],&min_step[3],&min_step[4]);
     fclose(score);
 }

@@ -4,7 +4,6 @@ extern int now_x;
 extern  int now_y;
 extern int level;
 extern int map[10][10];
-int extern goal1_x,goal1_y,goal2_x,goal2_y,goal3_x,goal3_y,goal4_x,goal4_y,goal5_x,goal5_y;
 int Up() {
     // 3 1 -> 1 3当人在空地
     if(3 == map[now_x][now_y])
