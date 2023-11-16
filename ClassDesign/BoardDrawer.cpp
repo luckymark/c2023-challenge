@@ -4,8 +4,13 @@
 
 #include "BoardDrawer.h"
 #include <iostream>
+#include <thread>
 
-void BoardDrawer::Round(){
+void BoardDrawer::Round(int sleepTime){
+    //绘制当前玩家：
+    string current= "CurrentPlayer: ";
+    current.append(CurrentPlayer==PieceStatus::Black?"Black":"White");
+    DrawText(current.c_str(),20,Board_Size+40,20,BLACK);
     Point p;
     if(Players[0]->PlayerColor==CurrentPlayer) {
         p = Players[0]->NextStep();
@@ -16,6 +21,7 @@ void BoardDrawer::Round(){
     cout<<"POINT AT: "<<p.x<<" "<<p.y<<endl;
     MapData[p.x][p.y]=CurrentPlayer;
     ExchangePlayer();
+    if(sleepTime!=0)this_thread::sleep_for(chrono::milliseconds(sleepTime));
 }
 
 void BoardDrawer::ExchangePlayer() {
@@ -42,14 +48,16 @@ void BoardDrawer::DrawPieces(){
     }
 }
 
-void  BoardDrawer::IfWined(){
+PieceStatus  BoardDrawer::IfWined(bool& drew){
     Color LineColor=BLUE;
     Vector2 p_start,p_end;
     PieceStatus IfWin=PieceStatus::None;
+    int pieceCount=0;
     //判断是否胜利，一个没有效率的方法：
     for(int x=0;x<15;x++) {
         for (int y = 0; y < 15; y++) {
             if (MapData[x][y] == PieceStatus::None)continue;
+            pieceCount++;
             //判断横向：
             if (x <= 10 && MapData[x][y] == MapData[x + 1][y] && MapData[x][y] == MapData[x + 2][y] &&
                 MapData[x][y] == MapData[x + 3][y] && MapData[x][y] == MapData[x + 4][y]) {
@@ -82,11 +90,12 @@ void  BoardDrawer::IfWined(){
         }
     }
     if(IfWin!=PieceStatus::None){
-        DrawLineEx(p_start, p_end, LineThick, LineColor);
+        DrawLineEx(p_start, p_end, LineThick+2, LineColor);
+        return IfWin;
+    }else{
+        if(pieceCount==225){
+            drew=true;
+        }
     }
-    if(IfWin!=PieceStatus::None){
-        string str= "Winner: ";
-        str.append(IfWin==PieceStatus::Black?"Black":"White");
-        DrawText(str.c_str(),20,Board_Size+60,20,BLACK);
-    }
+    return PieceStatus::None;
 }

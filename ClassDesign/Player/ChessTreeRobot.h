@@ -19,11 +19,14 @@ public:
 };
 
 class ChessTree{
+public:
+    //评估节点对局面的分数
+    static int Evaluate(ChessNode* node);
 
 };
 
 enum class ModelType{
-    H4,H3,M3,H2,M2
+    M2=0,H3=1,H4=2
 };
 
 class ChessModel{

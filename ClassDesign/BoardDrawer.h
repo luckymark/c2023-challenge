@@ -20,13 +20,13 @@ class BoardDrawer {
 private:
     static void ExchangePlayer();
 public:
-    static void Round();
+    static void Round(int sleepTime=0);
     //绘制棋盘背景
     static void DrawBackground();
     //根据MapData绘制棋子
     static void DrawPieces();
     //到底是谁在赢这个游戏
-    static void  IfWined();
+    static PieceStatus  IfWined(bool& drew);
 };
 
 

@@ -18,7 +18,7 @@ PieceStatus CurrentPlayer=PieceStatus::Black;
 IPlayer* Players[2];
 
 int main(){
-    InitWindow(Board_Size+60,Board_Size+90,"我不会写五子棋");
+    InitWindow(Board_Size+60,Board_Size+90,"GobangCat");
     SetConfigFlags(FLAG_MSAA_4X_HINT);
     //加载玩家：
     auto human=new HumanPlayer();
@@ -27,6 +27,10 @@ int main(){
     auto robot=new ChessTreeRobot();
     robot->PlayerColor=PieceStatus::White;
     Players[1]=robot;
+    //是否有人胜出：
+    bool wined=false;
+    //计步器
+    int step=0;
 
     while(!WindowShouldClose()){
         BeginDrawing();
@@ -36,9 +40,31 @@ int main(){
         //绘制棋子：
         BoardDrawer::DrawPieces();
         //进行一轮博弈
-        BoardDrawer::Round();
+        if(!wined) {
+            BoardDrawer::Round();
+            step++;
+        }
         //判断有无胜出
-        BoardDrawer::IfWined();
+        bool drew=false;
+        auto winner=BoardDrawer::IfWined(drew);
+        if(winner!=PieceStatus::None || drew){
+            wined=true;
+            string win=drew?"No one":(winner==PieceStatus::Black?"Black":"White");
+            win.append(" Wined in "+to_string(step)+" steps!");
+            DrawText(win.c_str(),20,Board_Size+40,20,BLACK);
+            DrawText("Press ENTER to restart",20,Board_Size+60,20,BLACK);
+            if(IsKeyPressed(KEY_ENTER)){
+                wined=false;
+                //重新开始：
+                for(auto & x : MapData){
+                    for(auto & y : x){
+                        y=PieceStatus::None;
+                    }
+                }
+                CurrentPlayer=PieceStatus::Black;
+            }
+        }
+
         EndDrawing();
     }
     CloseWindow();

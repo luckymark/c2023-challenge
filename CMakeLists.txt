@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(c2023_challenge)
 
+set(CMAKE_EXE_LINKER_FLAGS "-static")
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -24,7 +25,7 @@ add_executable(level0 level0/main.c)
 add_executable(level0_bs level0/bubbleSort/main.c)
 
 
-add_executable(wuziqi
+add_executable(GobangCat
         ClassDesign/main.cpp
         ClassDesign/Player/RandomRobot.cpp
         ClassDesign/DataType.h
@@ -35,7 +36,8 @@ add_executable(wuziqi
         ClassDesign/Player/ChessTreeRobot.cpp
         ClassDesign/Player/ChessTreeRobot.h)
 find_package(raylib)
-target_link_libraries(wuziqi raylib)
+target_link_libraries(GobangCat raylib)
+
 add_executable(NeuralNetworks level2/NeuralNetworks/main.cpp
         level2/NeuralNetworks/Network.cpp
         level2/NeuralNetworks/Network.h)
