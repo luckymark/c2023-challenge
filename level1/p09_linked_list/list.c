@@ -2,26 +2,26 @@
 
 SLTNode* CreatListNode(SListType x)
 {
-	SLTNode* newnode = (SLTNode*)malloc(sizeof(SLTNode));
-	if (newnode == NULL)
+	SLTNode* newNode = (SLTNode*)malloc(sizeof(SLTNode));
+	if (newNode == NULL)
 	{
 		printf("melloc failed!");
 		exit(-1);
 	}
-	newnode->data = x;
-	newnode->next = NULL;
+	newNode->data = x;
+	newNode->next = NULL;
 
-	return newnode;
+	return newNode;
 }
 
 void SListPushBack(SLTNode** pphead, SListType x)
 {
 	assert(pphead);
-	SLTNode* newnode = CreatListNode(x);
+	SLTNode* newNode = CreatListNode(x);
 
 	if (*pphead == NULL)
 	{
-		*pphead = newnode;
+		*pphead = newNode;
 	}
 	else
 	{
@@ -32,7 +32,7 @@ void SListPushBack(SLTNode** pphead, SListType x)
 			tail = tail->next;
 		}
 
-		tail->next = newnode;
+		tail->next = newNode;
 	}
 }
 
@@ -102,10 +102,9 @@ int SListFindNext(SLTNode* phead, SListType x,int n)
 	assert(phead);
 	SLTNode* cur = phead;
 	int i = n;
-	while (i)
+	while (i--)
 	{
 		cur =cur->next;
-		i--;
 	}
 	while (cur)
 	{
@@ -120,5 +119,16 @@ int SListFindNext(SLTNode* phead, SListType x,int n)
 		}
 	}
 	return -1;
+}
 
+void SListDestroy(SLTNode** pphead)
+{
+	assert(pphead);
+	while (*pphead)
+	{
+		SLTNode* next = (*pphead)->next;
+		free(*pphead);
+		*pphead = next;
+	}
+	*pphead = NULL;
 }

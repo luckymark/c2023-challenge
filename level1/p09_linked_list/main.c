@@ -35,5 +35,6 @@ int main()
 	{
 		printf("不存在下一个节点！");
 	}
+	SListDestroy(&plist);
 	return 0;
 }
