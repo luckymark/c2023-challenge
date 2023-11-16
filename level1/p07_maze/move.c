@@ -47,7 +47,8 @@ int Move(){
             printf("挑战成功！\n");
             MessageBoxW(NULL, L"恭喜通关！", L"恭喜！", MB_OK);
             system("pause");
-            return 1;
+			TODO://待实现：level++则返回2进入下一关
+            return -1;
         }
     }
 }
