@@ -8,8 +8,10 @@ extern int goods_num;
 int menu()
 {
 	int choice;
+	system("cls");
 	printf("欢迎使用仓库管理系统！\n");
-	while (1) {
+	while (1)
+	{
 		printf("请选择你要进行的操作：\n");
 		printf("1.显示存货列表\n");
 		printf("2.入库\n");
@@ -17,7 +19,8 @@ int menu()
 		printf("4.退出程序\n");
 		printf("请输入你的选择：");
 		scanf("%d", &choice);
-		switch (choice) {
+		switch (choice)
+		{
 		case 1:
 			show_goods_list();
 			break;
@@ -31,7 +34,8 @@ int menu()
 			save_goods_list();
 			//弹出窗口确认是否退出
 			int result = MessageBoxW(NULL, L"是否退出程序？", L"提示", MB_YESNO | MB_ICONQUESTION);
-			if (result == IDYES) {
+			if (result == IDYES)
+			{
 				exit(0);
 			}
 			break;

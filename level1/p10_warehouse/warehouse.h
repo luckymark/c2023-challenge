@@ -7,11 +7,11 @@
 #define MAX_GOODS_NUM 100
 
 // 货物结构体
-typedef struct {
+typedef struct
+{
 	char name[20];
 	int num;
 } Goods;
-
 
 // 菜单
 int menu();
@@ -25,3 +25,7 @@ void remove_goods();
 void save_goods_list();
 // 5.加载存货列表
 void load_goods_list();
+//判断是否是有效的货物型号
+_Bool is_valid_name(char *name);
+//判断是否已经存在该型号的货物
+_Bool is_exist(char *name);
