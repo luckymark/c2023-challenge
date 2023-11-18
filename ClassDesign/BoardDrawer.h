@@ -20,6 +20,10 @@ class BoardDrawer {
 private:
     static void ExchangePlayer();
 public:
+    static void Restart();
+    static int GetSteps();
+    static void ResetStep();
+    static void RegretAStep(int stepCount);
     static void Round(int sleepTime=0);
     //绘制棋盘背景
     static void DrawBackground();

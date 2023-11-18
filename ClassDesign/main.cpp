@@ -12,6 +12,8 @@ const int GridSize =  60;
 
 //defined at DataType.h
 ChessMap MapData={PieceStatus::None};
+//记录每一步的历史
+stack<Point> StepHistory;
 //黑子先手
 PieceStatus CurrentPlayer=PieceStatus::Black;
 //玩家列表
@@ -25,8 +27,10 @@ int main(){
     human->PlayerColor=PieceStatus::Black;
     Players[0]=human;
     auto robot=new ChessTreeRobot();
+   // robot->EnableTreeSearch=false;
     robot->PlayerColor=PieceStatus::White;
     Players[1]=robot;
+
     //是否有人胜出：
     bool wined=false;
 
@@ -52,15 +56,14 @@ int main(){
             DrawText("Press ENTER to restart",20,Board_Size+60,20,BLACK);
             if(IsKeyPressed(KEY_ENTER)){
                 wined=false;
-                BoardDrawer::ResetStep();
-                //重新开始：
-                for(auto & x : MapData){
-                    for(auto & y : x){
-                        y=PieceStatus::None;
-                    }
-                }
-                CurrentPlayer=PieceStatus::Black;
+                BoardDrawer::Restart();
             }
+        }
+
+        //悔棋
+        if(IsKeyPressed(KEY_UP)){
+            BoardDrawer::RegretAStep(2);
+            if(wined)wined=false;
         }
 
         EndDrawing();

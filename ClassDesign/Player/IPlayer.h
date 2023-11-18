@@ -24,5 +24,6 @@ class ChessTreeRobot : public IPlayer
 {
     public:
     Point NextStep() override;
+    bool EnableTreeSearch=true;
 };
 #endif

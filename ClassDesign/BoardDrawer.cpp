@@ -6,12 +6,33 @@
 #include <iostream>
 #include <thread>
 
-int TotalSteps=0;
 int BoardDrawer::GetSteps() {
-    return TotalSteps;
+    return StepHistory.size();
 }
 void BoardDrawer::ResetStep(){
-    TotalSteps=0;
+    while(!StepHistory.empty())
+        StepHistory.pop();
+}
+void BoardDrawer::Restart() {
+    ResetStep();
+    //重新开始：
+    for(auto & x : MapData){
+        for(auto & y : x){
+            y=PieceStatus::None;
+        }
+    }
+    CurrentPlayer=PieceStatus::Black;
+}
+void BoardDrawer::RegretAStep(int stepCount){
+    int count=0;
+    for(int i=0;i<stepCount;i++)
+    if(!StepHistory.empty()){
+        auto p1=StepHistory.top();
+        StepHistory.pop();
+        MapData[p1.x][p1.y]=PieceStatus::None;
+        count++;
+    }
+    if(count%2==1)ExchangePlayer();
 }
 void BoardDrawer::Round(int sleepTime){
     //绘制当前玩家：
@@ -28,7 +49,7 @@ void BoardDrawer::Round(int sleepTime){
     cout<<"POINT AT: "<<p.x<<" "<<p.y<<endl;
     MapData[p.x][p.y]=CurrentPlayer;
     ExchangePlayer();
-    TotalSteps++;
+    StepHistory.push(p);
     if(sleepTime!=0)this_thread::sleep_for(chrono::milliseconds(sleepTime));
 }
 

@@ -6,6 +6,7 @@
 #define C2023_CHALLENGE_DATATYPE_H
 
 #include <string>
+#include <stack>
 using namespace std;
 
 enum class PieceStatus {
@@ -19,18 +20,19 @@ extern PieceStatus CurrentPlayer;
 
 struct Point{
     int x,y;
-    bool operator ==(const Point& p) const{
-        return MapData[x][y]==MapData[p.x][p.y];
+    [[nodiscard]]
+    bool EmptyInMap(const ChessMap& map) const{
+        return map[x][y]==PieceStatus::None;
     }
-    bool operator ==(const PieceStatus status) const{
-        return MapData[x][y]==status;
+    [[nodiscard]]
+    bool EqualInMap(const Point& p,const ChessMap& map) const{
+        return map[x][y]==map[p.x][p.y];
     }
-    bool operator !=(const Point& p) const{
-        return MapData[x][y]!=MapData[p.x][p.y];
-    }
-    bool operator !=(const PieceStatus status) const{
-        return MapData[x][y]!=status;
+    [[nodiscard]]
+    bool EqualInMap(PieceStatus status,const ChessMap& map)const {
+        return map[x][y]==status;
     }
 };
+extern stack<Point> StepHistory;
 
 #endif //C2023_CHALLENGE_DATATYPE_H
