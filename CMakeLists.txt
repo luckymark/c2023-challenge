@@ -34,7 +34,8 @@ add_executable(GobangCat
         ClassDesign/Player/IPlayer.h
         ClassDesign/Player/HumanPlayer.cpp
         ClassDesign/Player/ChessTreeRobot.cpp
-        ClassDesign/Player/ChessTreeRobot.h)
+        ClassDesign/Player/ChessTreeRobot.h
+        ClassDesign/DataType.cpp)
 find_package(raylib)
 target_link_libraries(GobangCat raylib)
 

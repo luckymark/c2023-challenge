@@ -32,7 +32,7 @@ public:
 };
 
 enum class ModelType{
-    M2,H3,H4,Win
+    M2,H3,Cube2,Cube3,M4,Cube4,H4,Win
 };
 
 class ChessModel{

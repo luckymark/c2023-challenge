@@ -23,7 +23,8 @@ int main(){
     InitWindow(Board_Size+60,Board_Size+90,"GobangCat");
     SetConfigFlags(FLAG_MSAA_4X_HINT);
     //加载玩家：
-    auto human=new HumanPlayer();
+    auto human=new ChessTreeRobot();
+    human->EnableTreeSearch=false;
     human->PlayerColor=PieceStatus::Black;
     Players[0]=human;
     auto robot=new ChessTreeRobot();
