@@ -3,6 +3,8 @@
 //
 //
 #include "IPlayer.h"
+#include <random>
+#include <ctime>
 
 Point RandomRobot::NextStep() {
     int x, y;
@@ -11,13 +13,19 @@ Point RandomRobot::NextStep() {
     if(!StepHistory.empty())
         lastPoint=StepHistory.top();
     else return {7,7};
-    for(int range=1;range<=5;range++) {
+    std::default_random_engine e;
+    e.seed(time(0));
+    for(int range=1;range<=14;range++) {
         int count=0;
         do {
-            x = lastPoint.x + rand() % (3*range) - 1;
-            y = lastPoint.y + rand() % (3*range) - 1;
-            if(count++>1000) break;
+            std::uniform_int_distribution<int> ux(lastPoint.x-range,lastPoint.x+range);
+            std::uniform_int_distribution<int> uy(lastPoint.y-range,lastPoint.y+range);
+            x = ux(e);
+            y = uy(e);
+            if(count++>10) break;
         } while (x < 0 || x >= 15 || y < 0 || y >= 15 || !Point{x, y}.EmptyInMap(MapData));
+        if(x > 0 && x < 15 && y > 0 && y < 15 && Point{x, y}.EmptyInMap(MapData))
+            break;
     }
     if(x < 0 || x >= 15 || y < 0 || y >= 15 || !Point{x, y}.EmptyInMap(MapData)){
         for(int i=0;i<15;i++)

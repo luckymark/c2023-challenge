@@ -6,6 +6,12 @@
 #include <iostream>
 #include <thread>
 
+void BoardDrawer::HighlightLastPoint() {
+    if(StepHistory.empty())return;
+    auto p=StepHistory.top();
+    DrawCircle(Margin+p.x*GridSize,Margin+p.y*GridSize,PieceSize+3,PINK);
+}
+
 int BoardDrawer::GetSteps() {
     return StepHistory.size();
 }

@@ -1,7 +1,9 @@
 #ifndef C2023_CHALLENGE_IPLAYER_H
 #define C2023_CHALLENGE_IPLAYER_H
 //Player的抽象接口
-#include "../DataType.h"
+//定义了玩家的基本行为
+//所有玩家于此定义
+#include "../DataHelper/DataType.h"
 
 class IPlayer
 {
@@ -26,4 +28,5 @@ class ChessTreeRobot : public IPlayer
     Point NextStep() override;
     bool EnableTreeSearch=true;
 };
+
 #endif

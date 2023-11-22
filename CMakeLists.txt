@@ -28,14 +28,17 @@ add_executable(level0_bs level0/bubbleSort/main.c)
 add_executable(GobangCat
         ClassDesign/main.cpp
         ClassDesign/Player/RandomRobot.cpp
-        ClassDesign/DataType.h
+        ClassDesign/DataHelper/DataType.h
         ClassDesign/BoardDrawer.cpp
         ClassDesign/BoardDrawer.h
         ClassDesign/Player/IPlayer.h
         ClassDesign/Player/HumanPlayer.cpp
         ClassDesign/Player/ChessTreeRobot.cpp
-        ClassDesign/Player/ChessTreeRobot.h
-        ClassDesign/DataType.cpp)
+        ClassDesign/DataHelper/DataType.cpp
+        ClassDesign/DataHelper/ChessTree.cpp
+        ClassDesign/DataHelper/ChessTree.h
+        ClassDesign/DataHelper/ModelChecker.cpp
+        ClassDesign/DataHelper/ModelChecker.h)
 find_package(raylib)
 target_link_libraries(GobangCat raylib)
 

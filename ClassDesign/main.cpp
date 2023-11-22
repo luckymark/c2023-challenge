@@ -23,8 +23,7 @@ int main(){
     InitWindow(Board_Size+60,Board_Size+90,"GobangCat");
     SetConfigFlags(FLAG_MSAA_4X_HINT);
     //加载玩家：
-    auto human=new ChessTreeRobot();
-    human->EnableTreeSearch=false;
+    auto human=new HumanPlayer();
     human->PlayerColor=PieceStatus::Black;
     Players[0]=human;
     auto robot=new ChessTreeRobot();
@@ -40,6 +39,8 @@ int main(){
         ClearBackground(SKYBLUE);
         //绘制棋盘背景：
         BoardDrawer::DrawBackground();
+        //显示上一步
+        BoardDrawer::HighlightLastPoint();
         //绘制棋子：
         BoardDrawer::DrawPieces();
         //进行一轮博弈

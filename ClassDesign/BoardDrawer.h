@@ -5,7 +5,7 @@
 #ifndef C2023_CHALLENGE_BOARDDRAWER_H
 #define C2023_CHALLENGE_BOARDDRAWER_H
 #include <raylib.h>
-#include "DataType.h"
+#include "DataHelper/DataType.h"
 #include "Player/IPlayer.h"
 
 extern const float Board_Size;
@@ -20,10 +20,17 @@ class BoardDrawer {
 private:
     static void ExchangePlayer();
 public:
+    //显示上一步
+    static void HighlightLastPoint();
+    //重来
     static void Restart();
+    //获得总计步骤
     static int GetSteps();
+    //重置步数历史
     static void ResetStep();
+    //反悔一步
     static void RegretAStep(int stepCount);
+    //进行一轮博弈
     static void Round(int sleepTime=0);
     //绘制棋盘背景
     static void DrawBackground();
