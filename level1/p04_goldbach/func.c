@@ -1,8 +1,14 @@
 #include <stdio.h>
+#include <math.h>
+
 int isPrime(int n){
     int count = 0;
-    for (int i = 1; i < n; i++)
+    int sq=sqrt(n);
+    for (int i = 1; i < sq; i++) {
         count += n % i == 0;
+        if(count>1)
+            return 0;
+    }
     return count==1;
 }
 void DivideNum(int n){

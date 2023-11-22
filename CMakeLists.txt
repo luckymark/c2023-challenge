@@ -20,11 +20,6 @@ add_executable(level2_PI level2/PI/main.cpp
         level2/PI/Calculator.h)
 target_link_libraries(level2_PI ${Boost_LIBRARIES})
 
-add_subdirectory(level1)
-add_executable(level0 level0/main.c)
-add_executable(level0_bs level0/bubbleSort/main.c)
-
-
 add_executable(GobangCat
         ClassDesign/main.cpp
         ClassDesign/Player/RandomRobot.cpp

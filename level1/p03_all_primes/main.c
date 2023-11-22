@@ -1,12 +1,7 @@
 #include <stdio.h>
 #include <time.h>
+#include "../p04_goldbach/header.h"
 
-int isPrime(int n){
-    int count = 0;
-    for (int i = 1; i < n; i++)
-        count += n % i == 0;
-    return count==1;
-}
 int main() {
     time_t start,done;
     start=clock();
