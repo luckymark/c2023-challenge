@@ -84,7 +84,7 @@ void gobang_gui(Gobang *gobang, int (*player_move)(Gobang *gobang, int x, int y)
                     *ai_piece = -1;    // 切换AI棋子， 重新开始
                 } else if (mode == 2){
                     // AI 执白棋
-                    *ai_piece = 11;
+                    *ai_piece = 1;
                 }
                 while (!gobang->steps->is_empty(gobang->steps)){
                     take_back(gobang);
@@ -106,7 +106,6 @@ void gobang_gui(Gobang *gobang, int (*player_move)(Gobang *gobang, int x, int y)
 
         // 绘制
         BeginDrawing();
-        // printf("111\n");
         ClearBackground(color);
         DrawTexture(t_chess_board, CHESSBOARD_START_X, CHESSBOARD_START_Y, WHITE);
         DrawTexture(t_take_back, 900, CHESSBOARD_START_Y + 100, WHITE);
@@ -116,9 +115,6 @@ void gobang_gui(Gobang *gobang, int (*player_move)(Gobang *gobang, int x, int y)
         // DrawTexture(t_black_win, 1000, 1000, WHITE);
         for(int i = 0; i < 15; i ++){
             for(int j = 0; j < 15; j ++){
-/*                if(gobang->chessboard == 0){
-                    continue;
-                }*/
                 pos_x = BOUNDARY_LENGTH + CHESSBOARD_START_X + GAP_LENGTH * j;
                 pos_y = BOUNDARY_LENGTH + CHESSBOARD_START_Y + GAP_LENGTH * i;
                 if(gobang->chessboard[i][j] < 0){
