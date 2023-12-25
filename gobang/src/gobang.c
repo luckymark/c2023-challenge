@@ -1,6 +1,7 @@
 #include "../headers/gobang.h"
 void generate_steps(Gobang *gobang, int x, int y);
 
+
 const int direction[DIR_NUM][2] = {
         {1, 0}, // 下
         {0, 1}, // 右
@@ -11,16 +12,6 @@ const int direction[DIR_NUM][2] = {
 Gobang *create_gobang(){
     Gobang *gobang = (Gobang *)malloc(sizeof(Gobang));
     memset(gobang, 0, sizeof(Gobang));
-    gobang->chessboard = (int **) malloc(sizeof(int *) * BOARD_SIZE);
-    for(int i = 0; i < BOARD_SIZE; i ++){
-        gobang->chessboard[i] = (int *) malloc(sizeof(int) * BOARD_SIZE);
-        memset(gobang->chessboard[i], 0, sizeof(int) * BOARD_SIZE);
-    }
-    gobang->pos_steps = (int **) malloc(sizeof(int *) * BOARD_SIZE);
-    for(int i = 0; i < BOARD_SIZE; i ++){
-        gobang->pos_steps[i] = (int *) malloc(sizeof(int) * BOARD_SIZE);
-        memset(gobang->pos_steps[i], 0, sizeof(int) * BOARD_SIZE);
-    }
     gobang->pos_steps_num = 0;
     gobang->now_player = PLAYER_BLACK;
     gobang->steps = create_stack(BOARD_SIZE * BOARD_SIZE);
@@ -31,7 +22,6 @@ int is_win(Gobang *gobang){
     /*
      * 返回获胜的玩家的棋子, 如果没人获胜, 则返回0
      */
-    // int prev_x, prev_y;
     if(gobang->steps->sp < 9){
         return 0;
     }
@@ -41,13 +31,9 @@ int is_win(Gobang *gobang){
 
     if(gobang->now_player == PLAYER_WHITE){
         // 现在到白棋, 则上一步是黑棋下的, 检验黑棋
-        /*prev_x = gobang->prevOperate[0][0];
-        prev_y = gobang->prevOperate[0][1];*/
         piece = PLAYER_BLACK;
     } else {
         // 反之白棋
-        /*prev_x = gobang->prevOperate[1][0];
-        prev_y = gobang->prevOperate[1][1];*/
         piece = PLAYER_WHITE;
     }
     int count;
@@ -101,27 +87,12 @@ int fall(Gobang *gobang, int x, int y){
     gobang->steps->append(gobang->steps, piece, x, y);
 
     // 生成可能落子点
-    generate_steps(gobang, x, y);
-
-    // 将原本的上一步修改为之前步 (暂时舍弃)
-    /*int *prev = gobang->steps->get_last_element(gobang->steps);
-
-    int prev_x = prev[1], prev_y = prev[2];
-    int index = piece == PLAYER_WHITE ? 1 : 0; // 如果是白子, 则下标为1, 如果是黑子, 下标为0
-    prev_x = gobang->prevOperate[index][0];
-    prev_y = gobang->prevOperate[index][1];*/
-    /*if(prev_x != -1 && prev_y != -1){
-        // 存在上一步, 为-1时表示没有上一步
-        // gobang->chessboard[prev_x][prev_y] = piece; // 用 1 来表示之前的操作
-    }*/
-    // 更新上一步棋
-    /*gobang->prevOperate[index][0] = x;
-    gobang->prevOperate[index][1] = y;*/
+     generate_steps(gobang, x, y);
 
     // 交换玩家
     gobang->now_player *= -1;   // 因为定义方式, * (-1)即可交换棋手
 
-    return piece;   // 下了什么棋, 返回什么棋
+    return piece;   // 返回下的棋
 }
 
 void print_chessboard_in_stdin(Gobang *gobang){
@@ -144,7 +115,7 @@ void print_pos_steps_in_stdin(Gobang *gobang){
 
 void generate_steps(Gobang *gobang, int x, int y){
     /*
-     * 为当前角色生成可能的落子点, 在落子时生成
+     * 生成可能的落子点, 在落子时生成
      * 生成策略: 距离已落子点曼哈顿距离小于等于2的所有点
      */
     int dir = 1;    // 正反方向
@@ -198,6 +169,9 @@ void generate_steps(Gobang *gobang, int x, int y){
 }
 
 int remove_piece(Gobang *gobang, int x, int y){
+    /*
+     * 悔棋
+     */
     if(gobang->chessboard[x][y] == 0){
         printf("[ERROR] REMOVE_ERROR: there is no piece. x: %d, y %d\n", x, y);
         return -1;  // 没有子
@@ -242,6 +216,17 @@ int remove_piece(Gobang *gobang, int x, int y){
     }
 
     return 1;
+}
+
+int take_back(Gobang *gobang){
+    /*
+     * 悔棋
+     * */
+    if(gobang->steps->is_empty(gobang->steps)){
+        return -1;
+    }
+    int *prev = gobang->steps->get_last_element(gobang->steps);
+    return remove_piece(gobang, prev[1], prev[2]);
 }
 
 void print_debug_msg(Gobang *gobang){

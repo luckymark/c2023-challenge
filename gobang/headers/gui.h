@@ -19,6 +19,5 @@
 #define GAP_LENGTH 54
 
 extern void
-gobang_gui(Gobang *gobang, int (*player_move)(Gobang *gobang, int x, int y), void (*ai_move)(Gobang *gobang));
-
+gobang_gui(Gobang *gobang, int (*player_move)(Gobang *gobang, int x, int y), void (*ai_move)(Gobang *gobang), int *ai_piece);
 #endif //C2023_CHALLENGE_GUI_H

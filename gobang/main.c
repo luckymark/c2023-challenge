@@ -4,18 +4,16 @@
 
 
 
+
 void ai_move(Gobang *gobang){
-
-    /*printf("\n[DEBUG]: \n");
-    print_chessboard_in_stdin(gobang);
-    printf("\n");
-    print_pos_steps_in_stdin(gobang);
-    printf("\n");*/
-
     long start = clock();
-    is_init = 0;
-    init_score(gobang);
-    search(gobang, MAX_DEPTH, -INFINITY, INFINITY - 1, PLAYER_WHITE);
+    if(gobang->steps->is_empty(gobang->steps)){
+        best_pos[0] = 7;
+        best_pos[1] = 7;
+    } else {
+        init_score(gobang);
+        first_search(gobang, MAX_DEPTH, -INFINITY, INFINITY - 1, ai);
+    }
     long end = clock();
     printf("\ntime: %ld ms\n", end - start);
     if(best_pos[0] == -1){
@@ -23,7 +21,6 @@ void ai_move(Gobang *gobang){
         best_pos[0] = 14;
         best_pos[1] = 14;
     } else {
-        printf("[DEBUG] AI STEP: (%d, %d)\n", best_pos[0], best_pos[1]);
         fall(gobang, best_pos[0], best_pos[1]);
     }
     best_pos[0] = -1;
@@ -35,8 +32,9 @@ int player_move(Gobang *gobang, int x, int y){
 }
 
 int main() {
-    // 暂时默认电脑为白棋后手
-    // file = fopen("F:\\code\\c\\gobang\\res\\m", "a");
     Gobang *gobang = create_gobang();
-    gobang_gui(gobang, player_move, ai_move);
+    init();
+    ai = PLAYER_WHITE;
+    gobang_gui(gobang, player_move, ai_move, &ai);
+
 }
