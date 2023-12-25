@@ -13,7 +13,7 @@ int main() {
     while(1){
         if(m==0)
             k=1;
-        if(m==57) 
+        if(m==57)
             k=-1;
         for(int i=1;i<=m*2;i++)
         {

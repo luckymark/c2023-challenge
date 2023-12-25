@@ -1,0 +1,4 @@
+D:/githubdesktop/c2023-challenge/level2/cmake-build-debug/CMakeFiles/GA.dir
+D:/githubdesktop/c2023-challenge/level2/cmake-build-debug/CMakeFiles/NeuralNetworks.dir
+D:/githubdesktop/c2023-challenge/level2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/githubdesktop/c2023-challenge/level2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

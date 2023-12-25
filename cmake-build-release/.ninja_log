@@ -1,0 +1,11 @@
+# ninja log v5
+10	257	7241596733232409	gobang/CMakeFiles/gobang.dir/init_.c.obj	914433abf8f1b98c
+6	149	7244180340133052	level2/CMakeFiles/NeuralNetworks.dir/NeuralNetworks/functions.c.obj	5ab51883b166b14c
+6	262	7241596733282504	gobang/CMakeFiles/gobang.dir/GUI.c.obj	5a74f5e623945144
+1	266	7241596733292428	gobang/CMakeFiles/gobang.dir/gobang.c.obj	9dee4ed9cf730e16
+18	267	7241596733292428	gobang/CMakeFiles/gobang.dir/check.c.obj	6a0079d91be0436d
+2	72	7244180339347910	level2/CMakeFiles/NeuralNetworks.dir/NeuralNetworks/NeuralNetworks.c.obj	cc18441aef967ffc
+34	268	7241596733323075	gobang/CMakeFiles/gobang.dir/act.c.obj	180939d1a3f05468
+765	910	7241596739750110	gobang/gobang.exe	dfd7182a5f6dec48
+25	765	7241596738352903	gobang/CMakeFiles/gobang.dir/search_function.c.obj	6eeb4ca2311ce1fe
+149	233	7244180340938747	level2/NeuralNetworks.exe	fcd7cd14e735e075

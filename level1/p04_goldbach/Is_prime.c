@@ -1,5 +1,7 @@
 ﻿//
 // Created by 14212 on 2023/9/25.
+/*extern int k,a[];
+#include<stdio.h>
 void Is_Prime(int try,int origin_n,int n){
     if(k==1)
         return;
@@ -26,4 +28,4 @@ void Is_Prime(int try,int origin_n,int n){
             return;
         }
     }
-}
+}*/

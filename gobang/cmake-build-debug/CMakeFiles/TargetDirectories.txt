@@ -1,0 +1,3 @@
+D:/githubdesktop/c2023-challenge/gobang/cmake-build-debug/CMakeFiles/gobang.dir
+D:/githubdesktop/c2023-challenge/gobang/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/githubdesktop/c2023-challenge/gobang/cmake-build-debug/CMakeFiles/rebuild_cache.dir

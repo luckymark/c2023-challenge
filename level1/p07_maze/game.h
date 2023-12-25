@@ -7,4 +7,4 @@
 void init_maze(char ch[][30]);
 int sum(int down,int up,int left,int right);
 void change(char (*ch)[30],int mm,int * a,int * b,int m,int n);
-#endif //C2023_CHALLENGE_GAME_H 
+#endif //C2023_CHALLENGE_GAME_H
