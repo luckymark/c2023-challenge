@@ -1,0 +1,13 @@
+# ninja log v5
+2	144	7250863126280963	design/CMakeFiles/wuziqi.dir/wuziqi/main.c.obj	5a64503bc99bcb0e
+3	201	7250867857558285	design/CMakeFiles/wuziqi.dir/wuziqi/interface.c.obj	820411fd822688c2
+31	542	7250863130281960	design/CMakeFiles/wuziqi.dir/wuziqi/game.c.obj	ab94e07230be83a6
+22	339	7250863128239244	design/CMakeFiles/wuziqi.dir/wuziqi/interaction.c.obj	9835205335e9a233
+202	3404	7250867859045931	design/wuziqi.exe	ab327202db82aff3
+28	736	7245018751124851	design/CMakeFiles/wuziqi.dir/wuziqi/fontdata.c.obj	faac2446763770d4
+8	253	7250863127384695	design/CMakeFiles/wuziqi.dir/wuziqi/stackAndSeqList.c.obj	60c0c5e4c5f6e0f0
+27	598	7250863130844550	design/CMakeFiles/wuziqi.dir/wuziqi/evaluate.c.obj	78e285029bdf8092
+3	1080	7249359854640537	my_study/CMakeFiles/test.dir/test/main.c.obj	bbba097862ef704b
+1081	3614	7249359855941172	my_study/test.exe	e290c5bcf9c294f1
+1	551	7250311061790251	my_study/CMakeFiles/packed_array.dir/packed_array/main.c.obj	3a060d9cc4d6eaa6
+551	3968	7250311067161780	my_study/packed_array.exe	ca6676a16d0e24bb
