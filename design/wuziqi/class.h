@@ -5,7 +5,6 @@
 // 定义按钮和菜单背景的颜色
 #define BUTTON_COLOR      CLITERAL(Color){ 160, 82, 45, 255 }
 #define MENU_COLOR      CLITERAL(Color){ 205, 133, 63, 255 }
-
 //定义棋盘行数以及列数
 #define BOARD_ROW 15
 #define BOARD_COL 15
