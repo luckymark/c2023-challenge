@@ -32,7 +32,6 @@
 					"source" : "level1",
 					"targetIndexes" : 
 					[
-						3,
 						4,
 						5,
 						6,
@@ -41,7 +40,8 @@
 						9,
 						10,
 						11,
-						12
+						12,
+						13
 					]
 				},
 				{
@@ -57,7 +57,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				},
 				{
@@ -72,7 +73,7 @@
 					"source" : "gobang",
 					"targetIndexes" : 
 					[
-						2
+						3
 					]
 				}
 			],
@@ -101,7 +102,6 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
-						3,
 						4,
 						5,
 						6,
@@ -110,7 +110,8 @@
 						9,
 						10,
 						11,
-						12
+						12,
+						13
 					]
 				},
 				{
@@ -123,7 +124,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				},
 				{
@@ -135,7 +137,7 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
-						2
+						3
 					]
 				}
 			],
@@ -144,15 +146,22 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "GA::@555c2adafbff5e85fad1",
-					"jsonFile" : "target-GA-Release-d42f4932b39c5a146404.json",
+					"jsonFile" : "target-GA-Release-dd4070eded93efb334b3.json",
 					"name" : "GA",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "NeuralNetworks::@555c2adafbff5e85fad1",
-					"jsonFile" : "target-NeuralNetworks-Release-87b3e63a303184922122.json",
+					"jsonFile" : "target-NeuralNetworks-Release-09f4c757bb6bbba0d407.json",
 					"name" : "NeuralNetworks",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "PI::@555c2adafbff5e85fad1",
+					"jsonFile" : "target-PI-Release-1e774f9c548b6a93eb6d.json",
+					"name" : "PI",
 					"projectIndex" : 2
 				},
 				{

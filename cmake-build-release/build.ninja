@@ -501,6 +501,12 @@ build level2/CMakeFiles/GA.dir/GA/GA_function.c.obj: C_COMPILER__GA_unscanned_Re
   OBJECT_DIR = level2\CMakeFiles\GA.dir
   OBJECT_FILE_DIR = level2\CMakeFiles\GA.dir\GA
 
+build level2/CMakeFiles/GA.dir/PI/main.c.obj: C_COMPILER__GA_unscanned_Release D$:/githubdesktop/c2023-challenge/level2/PI/main.c || cmake_object_order_depends_target_GA
+  DEP_FILE = level2\CMakeFiles\GA.dir\PI\main.c.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = level2\CMakeFiles\GA.dir
+  OBJECT_FILE_DIR = level2\CMakeFiles\GA.dir\PI
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target GA
@@ -509,9 +515,9 @@ build level2/CMakeFiles/GA.dir/GA/GA_function.c.obj: C_COMPILER__GA_unscanned_Re
 #############################################
 # Link the executable level2\GA.exe
 
-build level2/GA.exe: C_EXECUTABLE_LINKER__GA_Release level2/CMakeFiles/GA.dir/GA/GA_main.c.obj level2/CMakeFiles/GA.dir/GA/GA_function.c.obj
+build level2/GA.exe: C_EXECUTABLE_LINKER__GA_Release level2/CMakeFiles/GA.dir/GA/GA_main.c.obj level2/CMakeFiles/GA.dir/GA/GA_function.c.obj level2/CMakeFiles/GA.dir/PI/main.c.obj
   FLAGS = -O3 -DNDEBUG
-  LINK_FLAGS = -Wl,--stack,2147483648
+  LINK_FLAGS = -Wl,--stack,3221225472
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = level2\CMakeFiles\GA.dir
   POST_BUILD = cd .
@@ -551,7 +557,7 @@ build level2/CMakeFiles/NeuralNetworks.dir/NeuralNetworks/functions.c.obj: C_COM
 
 build level2/NeuralNetworks.exe: C_EXECUTABLE_LINKER__NeuralNetworks_Release level2/CMakeFiles/NeuralNetworks.dir/NeuralNetworks/NeuralNetworks.c.obj level2/CMakeFiles/NeuralNetworks.dir/NeuralNetworks/functions.c.obj
   FLAGS = -O3 -DNDEBUG
-  LINK_FLAGS = -Wl,--stack,2147483648
+  LINK_FLAGS = -Wl,--stack,3221225472
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = level2\CMakeFiles\NeuralNetworks.dir
   POST_BUILD = cd .
@@ -559,6 +565,40 @@ build level2/NeuralNetworks.exe: C_EXECUTABLE_LINKER__NeuralNetworks_Release lev
   TARGET_FILE = level2\NeuralNetworks.exe
   TARGET_IMPLIB = level2\libNeuralNetworks.dll.a
   TARGET_PDB = NeuralNetworks.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target PI
+
+
+#############################################
+# Order-only phony target for PI
+
+build cmake_object_order_depends_target_PI: phony || level2/CMakeFiles/PI.dir
+
+build level2/CMakeFiles/PI.dir/PI/main.c.obj: C_COMPILER__PI_unscanned_Release D$:/githubdesktop/c2023-challenge/level2/PI/main.c || cmake_object_order_depends_target_PI
+  DEP_FILE = level2\CMakeFiles\PI.dir\PI\main.c.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = level2\CMakeFiles\PI.dir
+  OBJECT_FILE_DIR = level2\CMakeFiles\PI.dir\PI
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target PI
+
+
+#############################################
+# Link the executable level2\PI.exe
+
+build level2/PI.exe: C_EXECUTABLE_LINKER__PI_Release level2/CMakeFiles/PI.dir/PI/main.c.obj
+  FLAGS = -O3 -DNDEBUG
+  LINK_FLAGS = -Wl,--stack,3221225472
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = level2\CMakeFiles\PI.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = level2\PI.exe
+  TARGET_IMPLIB = level2\libPI.dll.a
+  TARGET_PDB = PI.exe.dbg
 
 
 #############################################
@@ -691,6 +731,10 @@ build NeuralNetworks: phony level2/NeuralNetworks.exe
 
 build NeuralNetworks.exe: phony level2/NeuralNetworks.exe
 
+build PI: phony level2/PI.exe
+
+build PI.exe: phony level2/PI.exe
+
 build gobang: phony gobang/gobang.exe
 
 build gobang.exe: phony gobang/gobang.exe
@@ -764,7 +808,7 @@ build level1/all: phony level1/p01_running_letter.exe level1/p02_is_prime.exe le
 #############################################
 # Folder: D:/githubdesktop/c2023-challenge/cmake-build-release/level2
 
-build level2/all: phony level2/GA.exe level2/NeuralNetworks.exe
+build level2/all: phony level2/GA.exe level2/NeuralNetworks.exe level2/PI.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.

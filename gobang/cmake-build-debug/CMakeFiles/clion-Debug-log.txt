@@ -15,6 +15,6 @@ CMake Warning (dev) in CMakeLists.txt:
   information run "cmake --help-policy CMP0000".
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Configuring done (0.2s)
+-- Configuring done (1.5s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/githubdesktop/c2023-challenge/gobang/cmake-build-debug

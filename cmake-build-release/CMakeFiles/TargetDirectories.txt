@@ -14,6 +14,7 @@ D:/githubdesktop/c2023-challenge/cmake-build-release/level1/CMakeFiles/edit_cach
 D:/githubdesktop/c2023-challenge/cmake-build-release/level1/CMakeFiles/rebuild_cache.dir
 D:/githubdesktop/c2023-challenge/cmake-build-release/level2/CMakeFiles/GA.dir
 D:/githubdesktop/c2023-challenge/cmake-build-release/level2/CMakeFiles/NeuralNetworks.dir
+D:/githubdesktop/c2023-challenge/cmake-build-release/level2/CMakeFiles/PI.dir
 D:/githubdesktop/c2023-challenge/cmake-build-release/level2/CMakeFiles/edit_cache.dir
 D:/githubdesktop/c2023-challenge/cmake-build-release/level2/CMakeFiles/rebuild_cache.dir
 D:/githubdesktop/c2023-challenge/cmake-build-release/gobang/CMakeFiles/gobang.dir

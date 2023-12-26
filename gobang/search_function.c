@@ -427,7 +427,6 @@ int minimax_search(Board board_main,int layer,int c_alpha,int c_beta) {//极大�
             return c_beta;
     }
     if((board_main.station_all_scores<-30000000||board_main.station_all_scores>30000000)){
-        //fprintf(fp,"%d %d:     %d\n",step,layer,board_main.station_all_scores);
         if(board_main.station_all_scores>30000000&&layer==LAYER-1)
             return INT_MAX;
         return board_main.station_all_scores;
