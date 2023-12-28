@@ -95,4 +95,12 @@ int main() {
         printf("请选择菜单功能（1-4）：");
         scanf("%d", &choice);
         switch (choice) {
-            case 1: // 显示存货列表。
+            case 1: showInventory(inv);break;
+             case 2:addItem(inv);break;
+            case 3: removeItem(inv);break;
+            case 4:return 0;
+            
+        }
+    }
+        }
+    
