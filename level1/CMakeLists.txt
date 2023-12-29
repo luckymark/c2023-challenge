@@ -21,6 +21,8 @@ target_include_directories(p07_maze PRIVATE ${CURSES_INCLUDE_DIR})
 target_link_libraries(p07_maze PRIVATE ${CURSES_LIBRARIES})
 
 add_executable(p08_push_boxes p08_push_boxes/main.cpp)
+target_include_directories(p08_push_boxes PRIVATE ${CURSES_INCLUDE_DIR})
+target_link_libraries(p08_push_boxes PRIVATE ${CURSES_LIBRARIES})
 
 add_executable(p09_linked_list p09_linked_list/main.cpp)
 
