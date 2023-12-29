@@ -1,5 +1,7 @@
 //
 // Created by cz241 on 11/3/2023.
+//这个是旧版
+//仓库已经迁移到github上，作为单独项目
 //
 #include "BoardDrawer.h"
 

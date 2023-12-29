@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.2)
 project(level1)
 
 add_executable(p01_running_letter p01_running_letter/main.cpp)

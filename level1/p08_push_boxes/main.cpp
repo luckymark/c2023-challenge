@@ -7,7 +7,7 @@
 #include <vector>
 using namespace std;
 
-/*      GameMap.txt
+/*      GameMaps.txt
 T  #################,
 #          @      *#,
 # # ####   ##### ###,
@@ -67,6 +67,7 @@ int MapIndex=0;
 
 int main()
 {
+    system("chcp 65001");
     CONSOLE_CURSOR_INFO c={1,0};
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&c);
     printf("使用 w s a d控制人物T移动 将'@'扔进垃圾桶'*'处\r\n");
