@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include<time.h>
-#define ACCURACY 1000000
+//用的高精度+梅钦公式
+#define ACCURACY 1000//亲测输出1万位要1个小时59秒emmm
 #define SAFETY 10
 void multiply(int * cx,int * cx_copy,int num,int times,int * cx_len,int * cx_len_copy){
     if(times!=1)
