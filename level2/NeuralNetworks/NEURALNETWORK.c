@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define INPUT_NODES 784 // 28x28像素的图像
+#define INPUT_NODES 784 // 28x28像素的图像(minist图片集给的尺寸是这个，8*8的貌似找不到合适的图片输入，除非手打）
 #define HIDDEN_NODES 100
 #define OUTPUT_NODES 10 // 对应0-9的数字
 #define LEARNING_RATE 0.1
