@@ -5,3 +5,8 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(level1)
+add_subdirectory(level0)
+add_subdirectory(level2)
+add_subdirectory(class)
+add_subdirectory(my_study)
+add_subdirectory(design)

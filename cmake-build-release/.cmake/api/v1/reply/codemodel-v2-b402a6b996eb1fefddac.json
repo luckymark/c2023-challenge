@@ -1,0 +1,727 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						6,
+						7,
+						8,
+						9
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "level1",
+					"jsonFile" : "directory-level1-Release-d15955a4e348d3b43342.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "level1",
+					"targetIndexes" : 
+					[
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						46
+					]
+				},
+				{
+					"build" : "level0",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-level0-Release-be9096cf00fe8c50b197.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "level0",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "level0/c1",
+					"jsonFile" : "directory-level0.c1-Release-230af9a8ba3276a4df25.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "level0/c1",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				},
+				{
+					"build" : "level0/c2",
+					"jsonFile" : "directory-level0.c2-Release-13412afa3ade06a6df9c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 4,
+					"source" : "level0/c2",
+					"targetIndexes" : 
+					[
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "level0/c3",
+					"jsonFile" : "directory-level0.c3-Release-8447e5de70e0af437a71.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 5,
+					"source" : "level0/c3",
+					"targetIndexes" : 
+					[
+						18,
+						19,
+						20,
+						21,
+						22,
+						23
+					]
+				},
+				{
+					"build" : "level2",
+					"jsonFile" : "directory-level2-Release-eccd56c1ee9c9a61af62.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "level2"
+				},
+				{
+					"build" : "class",
+					"jsonFile" : "directory-class-Release-0a155e1f7a4c89b238b6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "class",
+					"targetIndexes" : 
+					[
+						24,
+						26,
+						27,
+						29,
+						41,
+						42,
+						43,
+						45
+					]
+				},
+				{
+					"build" : "my_study",
+					"jsonFile" : "directory-my_study-Release-87942e07f25db123ca59.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "my_study",
+					"targetIndexes" : 
+					[
+						25,
+						28,
+						40,
+						44,
+						47
+					]
+				},
+				{
+					"build" : "design",
+					"jsonFile" : "directory-design-Release-a0be2114f7317dfb5a1d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 8,
+					"source" : "design",
+					"targetIndexes" : 
+					[
+						48
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						6,
+						7,
+						8
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						6
+					],
+					"name" : "c2023_challenge"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "level1",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						46
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "level0",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "c01_01",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "c2_01",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "c3_01",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						18,
+						19,
+						20,
+						21,
+						22,
+						23
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "class",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						24,
+						26,
+						27,
+						29,
+						41,
+						42,
+						43,
+						45
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "my_study",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						25,
+						28,
+						40,
+						44,
+						47
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "wuziqi",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						48
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "bubbleSort::@d1f9073942b796606751",
+					"jsonFile" : "target-bubbleSort-Release-59a4f8959c87029f8722.json",
+					"name" : "bubbleSort",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "c0::@d1f9073942b796606751",
+					"jsonFile" : "target-c0-Release-6cfd2c108de1091a33af.json",
+					"name" : "c0",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "c01_01::@646056b09acf45f2068c",
+					"jsonFile" : "target-c01_01-Release-430a257173b1c101e0ca.json",
+					"name" : "c01_01",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "c01_02::@646056b09acf45f2068c",
+					"jsonFile" : "target-c01_02-Release-873d67db395ab48fc3dc.json",
+					"name" : "c01_02",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "c01_03::@646056b09acf45f2068c",
+					"jsonFile" : "target-c01_03-Release-65264cf392edc6fcd9e4.json",
+					"name" : "c01_03",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "c01_04::@646056b09acf45f2068c",
+					"jsonFile" : "target-c01_04-Release-656451d4b8dbc0179523.json",
+					"name" : "c01_04",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "c01_05::@646056b09acf45f2068c",
+					"jsonFile" : "target-c01_05-Release-33be0a96524a33325358.json",
+					"name" : "c01_05",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "c01_06::@646056b09acf45f2068c",
+					"jsonFile" : "target-c01_06-Release-5ea6adb66696c6bd4b0e.json",
+					"name" : "c01_06",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_01::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_01-Release-08b76d9262f6ac696bfd.json",
+					"name" : "c2_01",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_02::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_02-Release-903c8f85694ec0df3b39.json",
+					"name" : "c2_02",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_03::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_03-Release-91d9c6ee9e22894821f0.json",
+					"name" : "c2_03",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_04::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_04-Release-cafaf49522ce1558c12e.json",
+					"name" : "c2_04",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_05::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_05-Release-56366ec96f1edd03ede8.json",
+					"name" : "c2_05",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_06::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_06-Release-67784f2a4db1d878c44b.json",
+					"name" : "c2_06",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_07::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_07-Release-08342bd815c234f81af3.json",
+					"name" : "c2_07",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_08::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_08-Release-0566b86009a6029afeb9.json",
+					"name" : "c2_08",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_09::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_09-Release-06a7bbc17fb4f21e7f31.json",
+					"name" : "c2_09",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "c2_10::@c7b31748580709e6eda4",
+					"jsonFile" : "target-c2_10-Release-25fe4832d49dc2f8803a.json",
+					"name" : "c2_10",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "c3_01::@399e886c4b2928a5331b",
+					"jsonFile" : "target-c3_01-Release-6da62c5c6e82f78a7bde.json",
+					"name" : "c3_01",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "c3_02::@399e886c4b2928a5331b",
+					"jsonFile" : "target-c3_02-Release-c2c12368e175f26bd900.json",
+					"name" : "c3_02",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "c3_03::@399e886c4b2928a5331b",
+					"jsonFile" : "target-c3_03-Release-129cf1c3238ffc5db582.json",
+					"name" : "c3_03",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "c3_04::@399e886c4b2928a5331b",
+					"jsonFile" : "target-c3_04-Release-05ae85dff572547ef71d.json",
+					"name" : "c3_04",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "c3_05::@399e886c4b2928a5331b",
+					"jsonFile" : "target-c3_05-Release-0937d958c53bce8438d3.json",
+					"name" : "c3_05",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "c3_06::@399e886c4b2928a5331b",
+					"jsonFile" : "target-c3_06-Release-69ff835b29de848e97e3.json",
+					"name" : "c3_06",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "choose::@b6006207bac832bbf61c",
+					"jsonFile" : "target-choose-Release-8b1f097e32046e94c823.json",
+					"name" : "choose",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "delete_duplicates::@1fa31357784b7af97d07",
+					"jsonFile" : "target-delete_duplicates-Release-5bc5e3d64bbf23162ffb.json",
+					"name" : "delete_duplicates",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "insert::@b6006207bac832bbf61c",
+					"jsonFile" : "target-insert-Release-1dc227216e73f7dfb617.json",
+					"name" : "insert",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "list::@b6006207bac832bbf61c",
+					"jsonFile" : "target-list-Release-ca3d3041268dcbc444d5.json",
+					"name" : "list",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "my_list::@1fa31357784b7af97d07",
+					"jsonFile" : "target-my_list-Release-526af008f2864fe4f85e.json",
+					"name" : "my_list",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "others_1::@b6006207bac832bbf61c",
+					"jsonFile" : "target-others_1-Release-edca588d90ef1bc64c6c.json",
+					"name" : "others_1",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p01_running_letter::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p01_running_letter-Release-528ede153a123e21f57c.json",
+					"name" : "p01_running_letter",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p02_is_prime::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p02_is_prime-Release-e44247ecd2d1488cc84b.json",
+					"name" : "p02_is_prime",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p03_all_primes::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p03_all_primes-Release-51d50571ba7db7f21688.json",
+					"name" : "p03_all_primes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p04_goldbach::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p04_goldbach-Release-27dc14fdc18ec0eee4ce.json",
+					"name" : "p04_goldbach",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p05_encrypt_decrypt::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p05_encrypt_decrypt-Release-27cd07051c4cf97f5d4b.json",
+					"name" : "p05_encrypt_decrypt",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p06_hanoi::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p06_hanoi-Release-812fec950bc1c983323c.json",
+					"name" : "p06_hanoi",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p07_maze::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p07_maze-Release-63c00091bd12c1515c08.json",
+					"name" : "p07_maze",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p08_push_boxes::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p08_push_boxes-Release-88720c77dc9d7f9a3ed9.json",
+					"name" : "p08_push_boxes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p09_linked_list::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p09_linked_list-Release-86ebbbaede91d5d74816.json",
+					"name" : "p09_linked_list",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p10_warehouse::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p10_warehouse-Release-143b9cc6c012c0f6a6b2.json",
+					"name" : "p10_warehouse",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "packed_array::@1fa31357784b7af97d07",
+					"jsonFile" : "target-packed_array-Release-fef16b112d0c570774c9.json",
+					"name" : "packed_array",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "pop::@b6006207bac832bbf61c",
+					"jsonFile" : "target-pop-Release-4d022d7bb98625a7a8e4.json",
+					"name" : "pop",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "queue::@b6006207bac832bbf61c",
+					"jsonFile" : "target-queue-Release-1af306b1b89fde346718.json",
+					"name" : "queue",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "reverse_bolan_SeqLink::@b6006207bac832bbf61c",
+					"jsonFile" : "target-reverse_bolan_SeqLink-Release-2ac2b5992232309697ee.json",
+					"name" : "reverse_bolan_SeqLink",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "static_list::@1fa31357784b7af97d07",
+					"jsonFile" : "target-static_list-Release-14c43150f7e065bbea02.json",
+					"name" : "static_list",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "struct::@b6006207bac832bbf61c",
+					"jsonFile" : "target-struct-Release-9b0867455946342c1c33.json",
+					"name" : "struct",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "temp::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-temp-Release-701fb8069ffeb7e2bf60.json",
+					"name" : "temp",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "test::@1fa31357784b7af97d07",
+					"jsonFile" : "target-test-Release-945545130c159c28741c.json",
+					"name" : "test",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "wuziqi::@31ae00cbc25ff372844f",
+					"jsonFile" : "target-wuziqi-Release-1e1641662811c904178f.json",
+					"name" : "wuziqi",
+					"projectIndex" : 8
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/81201/CLionProjects/c2023-challenge/cmake-build-release",
+		"source" : "C:/Users/81201/CLionProjects/c2023-challenge"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
