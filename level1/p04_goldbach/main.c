@@ -1,6 +1,8 @@
-#include <printf.h>
+#include "header.h"
 
 int main() {
-    printf("hello world!\n");
+    for(int i=2;i<=100;i++){
+        DivideNum(i);
+    }
     return 0;
 }
