@@ -1,0 +1,10 @@
+{
+  "name" : "c2023-challenge",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "3715d743ac08146d9b7714085c1babdba9f262d5",
+  "dependencies" : [ {
+    "name" : "raylib",
+    "version>=" : "4.5.0#2",
+    "$comment" : "  # this is heuristically generated, and may not be correct\n\n  find_package(raylib CONFIG REQUIRED)\n\n  target_link_libraries(main PRIVATE raylib)\n"
+  } ]
+}

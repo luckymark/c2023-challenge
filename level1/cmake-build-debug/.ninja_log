@@ -1,0 +1,9 @@
+# ninja log v5
+0	41	7203639563995991	CMakeFiles/p02_is_prime.dir/p02_is_prime/Is_Prime.c.obj	bf9a08f8c6788cf5
+5	49	7203639564078776	CMakeFiles/p02_is_prime.dir/p02_is_prime/main.c.obj	c805ffc30b811a11
+50	126	7203639564822861	p02_is_prime.exe	54fb265b0b9f911b
+680	760	7203639778771215	p08_push_boxes.exe	30b3de002b98bfa7
+0	41	7203639771622868	CMakeFiles/p08_push_boxes.dir/p08_push_boxes/calculate_score.c.obj	45786e22b7456d14
+3	657	7203639777778282	CMakeFiles/p08_push_boxes.dir/p08_push_boxes/init_.c.obj	61278434f2787425
+6	680	7203639778010571	CMakeFiles/p08_push_boxes.dir/p08_push_boxes/main.c.obj	27ce45bc149257ca
+9	678	7203639777991467	CMakeFiles/p08_push_boxes.dir/p08_push_boxes/check.c.obj	9ad30ff4f0f550ab

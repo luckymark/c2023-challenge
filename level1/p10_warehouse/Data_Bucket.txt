@@ -1,0 +1,4 @@
+   Warehousing time        Goods mode        Quantity of goods        price of goods
+2023/10/15 14:42:07                TT                       45                  6.70
+2023/10/15 14:43:50                BB                       34                  5.00
+2023/10/15 14:54:20                SS                        1                768.00

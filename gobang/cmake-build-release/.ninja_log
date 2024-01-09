@@ -1,0 +1,8 @@
+# ninja log v5
+51	390	7252816749077187	CMakeFiles/gobang.dir/GUI.obj	5404d38113a5c83
+40	393	7252816749077187	CMakeFiles/gobang.dir/init_.obj	eb50397e63594da4
+4	395	7252816749130103	CMakeFiles/gobang.dir/gobang.obj	69de05709a2fb208
+18	405	7252816749252488	CMakeFiles/gobang.dir/act.obj	5726980eeffeb629
+61	994	7252816755177062	CMakeFiles/gobang.dir/search_function.obj	bee331d121ff5ab8
+27	397	7252816749140129	CMakeFiles/gobang.dir/check.obj	4f72c86ec18c1627
+994	1178	7252816756976139	gobang.exe	a9ecb175982299d2

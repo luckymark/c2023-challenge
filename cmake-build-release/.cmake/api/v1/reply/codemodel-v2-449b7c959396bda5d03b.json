@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "level1",
+					"jsonFile" : "directory-level1-Release-d15955a4e348d3b43342.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "level1",
+					"targetIndexes" : 
+					[
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				},
+				{
+					"build" : "level2",
+					"jsonFile" : "directory-level2-Release-eccd56c1ee9c9a61af62.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "level2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "gobang",
+					"jsonFile" : "directory-gobang-Release-ca54881bc8cbf2f6dbb2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "gobang",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "c2023_challenge"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "level1",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "level2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gobang",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "GA::@555c2adafbff5e85fad1",
+					"jsonFile" : "target-GA-Release-67c042c10ece60d98397.json",
+					"name" : "GA",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NeuralNetworks::@555c2adafbff5e85fad1",
+					"jsonFile" : "target-NeuralNetworks-Release-71645e83a2092c4d6c61.json",
+					"name" : "NeuralNetworks",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "PI::@555c2adafbff5e85fad1",
+					"jsonFile" : "target-PI-Release-88a2476c7d030e52caf6.json",
+					"name" : "PI",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SkipList::@555c2adafbff5e85fad1",
+					"jsonFile" : "target-SkipList-Release-06ca0336b152531cb7ae.json",
+					"name" : "SkipList",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gobang::@e81d844307bc53d77a13",
+					"jsonFile" : "target-gobang-Release-425d2e14b635eba67390.json",
+					"name" : "gobang",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p01_running_letter::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p01_running_letter-Release-3d896408378d93ea68da.json",
+					"name" : "p01_running_letter",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p02_is_prime::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p02_is_prime-Release-a7c99126c0aa62ad3eda.json",
+					"name" : "p02_is_prime",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p03_all_primes::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p03_all_primes-Release-a8c4a6cd741b852a101f.json",
+					"name" : "p03_all_primes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p04_goldbach::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p04_goldbach-Release-faab19f12ee5f8e8d22c.json",
+					"name" : "p04_goldbach",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p05_encrypt_decrypt::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p05_encrypt_decrypt-Release-ac6ab5d7405cae9606fc.json",
+					"name" : "p05_encrypt_decrypt",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p06_hanoi::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p06_hanoi-Release-52126ca7ac644dce0397.json",
+					"name" : "p06_hanoi",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p07_maze::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p07_maze-Release-d6d97fea5f940cec42f4.json",
+					"name" : "p07_maze",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p08_push_boxes::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p08_push_boxes-Release-3fdeea8c786687553083.json",
+					"name" : "p08_push_boxes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p09_linked_list::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p09_linked_list-Release-1b907f4d83c25be351e6.json",
+					"name" : "p09_linked_list",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p10_warehouse::@b906db641b4cde6fb11a",
+					"jsonFile" : "target-p10_warehouse-Release-769bb7bdb9c7e065f2ef.json",
+					"name" : "p10_warehouse",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/githubdesktop/c2023-challenge/cmake-build-release",
+		"source" : "D:/githubdesktop/c2023-challenge"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
